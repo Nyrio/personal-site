@@ -1,0 +1,10 @@
+# Python
+__pycache__
+
+# Django
+migrations
+db.sqlite3
+
+# Editor
+*.sublime-project
+*.sublime-workspace
