@@ -25,7 +25,7 @@ SECRET_KEY = 'r*n#kfm_c3hgke_19q3x-2)jio0oc+*oq&(w8%78pj8f#720af'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["nyri0.fr"]
 
 
 # Application definition
