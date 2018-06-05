@@ -3,6 +3,7 @@ __pycache__
 
 # Django
 migrations
+staticfiles
 db.sqlite3
 
 # Editor
