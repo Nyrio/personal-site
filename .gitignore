@@ -6,6 +6,9 @@ migrations
 staticfiles
 db.sqlite3
 
+# WSGI
+nyri0site_uwsgi.ini
+
 # Editor
 *.sublime-project
 *.sublime-workspace
