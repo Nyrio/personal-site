@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{% block title %}Nyri0 - Louis Sugy{% endblock %}</title>
+    {% block meta %}
+        <meta property="og:title" content="Nyri0 - Louis Sugy">
+        <meta property="og:description" content="Personal website and devblog.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://nyri0.fr">
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap-custom.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="content">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <strong class="monospace">nyri0</strong>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        {% url "about" as about_url %}
+                        <li {% if request.path == about_url %}class="active"{% endif %}><a href="{{ about_url }}"><span class="glyphicon glyphicon-info-sign" style="margin-right: 0.5em;"></span> About me</a></li>
+                        {% url "blog" as blog_url %}
+                        <li {% if request.path == blog_url %}class="active"{% endif %}><a href="{{ blog_url }}"><span class="glyphicon glyphicon-book" style="margin-right: 0.5em;"></span> Devblog</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right: 0.5em;"></span> Sign Up </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block body %}{% endblock %}
+        <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+        <script src="{% static "js/bootstrap.min.js" %}"></script>
+    </div>
+</body>
+</html>

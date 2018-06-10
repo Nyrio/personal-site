@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+}
+body {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+nav, .navbar {
+    border-radius: 0;
+}
+.no-hover:hover, .no-hover:focus {
+    background-color: transparent !important;
+    color: white !important;
+}
+.center {
+    text-align: center;
+}
+.monospace {
+    font-family: monospace;
+}
+
+.material-box {
+    background-color: #fff;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    -webkit-transition: -webkit-transform 250ms, -webkit-box-shadow 250ms;
+    transition: transform 250ms, box-shadow 250ms;
+
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+}
+.clickable-box:hover {
+    cursor: pointer;
+    -webkit-box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+    box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+    -webkit-transform:translateY(-5px)!important;
+    transform:translateY(-5px)!important
+}
