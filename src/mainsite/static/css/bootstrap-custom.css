@@ -7,11 +7,17 @@
 	padding-left: 20px;
 	padding-right: 20px;
 }
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand
+{
+	color: #ffffff;
+	background-color: #0060d0;
+}
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus
 {
 	color: #ffffff;
-	background-color: #404042;
+	background-color: #0050c0;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
