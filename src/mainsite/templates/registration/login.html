@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+{% block title %}Login | nyri0.fr{% endblock %}
+
+{% block body %}
+    <div id="mainbox" class="container material-box">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {{ form|bootstrap }}
+            <button class="btn btn-primary">Login</button>
+            <a href="{% url 'password-reset' %}" class="btn btn-default">Forgot Password?</a>
+        </form>
+    </div>
+{% endblock %}

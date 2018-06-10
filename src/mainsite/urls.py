@@ -18,4 +18,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('blog/', views.blog, name='blog'),
+
+    path('signup', views.RegistrationView.as_view(), name="signup"),
+    path('activate/<str:key>', views.confirm_email, name="confirm_email"),
 ]

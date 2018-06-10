@@ -4,10 +4,15 @@ __pycache__
 # Django
 migrations
 staticfiles
+media
 db.sqlite3
 
 # WSGI
 nyri0site_uwsgi.ini
+uwsgi_params
+
+# Private files
+private_settings.py
 
 # Editor
 *.sublime-project

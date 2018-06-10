@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+{% block title %}Signup | nyri0.fr{% endblock %}
+
+{% block body %}
+    <div id="mainbox" class="container material-box">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <button class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+{% endblock %}

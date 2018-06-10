@@ -38,7 +38,31 @@
                         <li {% if request.path == blog_url %}class="active"{% endif %}><a href="{{ blog_url }}"><span class="glyphicon glyphicon-book" style="margin-right: 0.5em;"></span> Devblog</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right: 0.5em;"></span> Sign Up </a></li>
+                        {% if request.user.is_authenticated %}
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" style="position: relative;" data-toggle="dropdown" href="#">
+                                    {% if request.user.avatar %}
+                                        <img class="img-circle profile-thumbnail" src="{{ request.user.avatar.thumbnail.url }}">
+                                        <span style="margin-right: 80px;"></span>
+                                    {% else %}
+                                        <span class="glyphicon glyphicon-user" style="margin-right: 0.5em;"></span>
+                                    {% endif %}
+                                    <span>{{request.user.username}}</span> <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><span class="glyphicon glyphicon-cog" style="margin-right: 0.5em;"></span> User settings </a></li>
+                                    {% if request.user.is_superuser %}
+                                        <li><a href="/admin"><span class="glyphicon glyphicon-wrench" style="margin-right: 0.5em;"></span> Admin </a></li>
+                                    {% endif %}
+                                    <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out" style="margin-right: 0.5em;"></span> Logout </a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            {% url "signup" as signup_url %}
+                            <li {% if request.path == signup_url %}class="active"{% endif %}><a href="{% url "signup" %}"><span class="glyphicon glyphicon-user" style="margin-right: 0.5em;"></span> Sign Up </a></li>
+                            {% url "login" as login_url %}
+                            <li {% if request.path == login_url %}class="active"{% endif %}><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in" style="margin-right: 0.5em;"></span> Login </a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
