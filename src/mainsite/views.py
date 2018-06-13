@@ -6,12 +6,13 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from simple_email_confirmation.models import EmailAddress
+from django.utils.translation import ugettext_lazy as ugl
 
 from .forms import CustomUserCreationForm
 
 
 def index(request):
-    return HttpResponseRedirect("/about/")
+    return HttpResponseRedirect(reverse("about"))
 
 
 def about(request):
@@ -29,7 +30,7 @@ class RegistrationView(generic.FormView):
     """
     form_class = CustomUserCreationForm
     template_name = "registration/signup.html"
-    success_url = "/"
+    success_url = ""  # TODO: fix to redirect on same language
 
     def form_valid(self, form):
         form.save()

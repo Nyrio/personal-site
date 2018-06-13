@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,12 +40,23 @@
                         <li {% if request.path == blog_url %}class="active"{% endif %}><a href="{{ blog_url }}"><span class="glyphicon glyphicon-book" style="margin-right: 0.5em;"></span> Devblog</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        {% get_current_language as language %}
+                        {% if language == "en" %}
+                            <li><a href="/fr{{ request.get_full_path|slice:'3:' }}" lang="fr">FR</a></li>
+                        {% else %}
+                            <li><a href="/en{{ request.get_full_path|slice:'3:' }}" lang="en">EN</a></li>
+                        {% endif %}
                         {% if request.user.is_authenticated %}
                             <li class="dropdown">
                                 <a class="dropdown-toggle" style="position: relative;" data-toggle="dropdown" href="#">
                                     {% if request.user.avatar %}
-                                        <img class="img-circle profile-thumbnail" src="{{ request.user.avatar.thumbnail.url }}">
-                                        <span style="margin-right: 80px;"></span>
+                                        <span class="hidden-xs">
+                                            <img class="img-circle profile-thumbnail" src="{{ request.user.avatar.thumbnail.url }}">
+                                            <span style="margin-right: 80px;"></span>
+                                        </span>
+                                        <span class="hidden-sm hidden-md hidden-lg">
+                                            <span class="glyphicon glyphicon-user" style="margin-right: 0.5em;"></span>
+                                        </span>
                                     {% else %}
                                         <span class="glyphicon glyphicon-user" style="margin-right: 0.5em;"></span>
                                     {% endif %}
