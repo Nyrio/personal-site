@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views import generic
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from simple_email_confirmation.models import EmailAddress
-from django.utils.translation import ugettext_lazy as ugl
 
 from .forms import CustomUserCreationForm
 
@@ -30,7 +29,7 @@ class RegistrationView(generic.FormView):
     """
     form_class = CustomUserCreationForm
     template_name = "registration/signup.html"
-    success_url = ""  # TODO: fix to redirect on same language
+    success_url = reverse_lazy("index")
 
     def form_valid(self, form):
         form.save()

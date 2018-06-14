@@ -74,7 +74,7 @@
                             {% url "signup" as signup_url %}
                             <li {% if request.path == signup_url %}class="active"{% endif %}><a href="{% url "signup" %}"><span class="glyphicon glyphicon-user" style="margin-right: 0.5em;"></span> Sign Up </a></li>
                             {% url "login" as login_url %}
-                            <li {% if request.path == login_url %}class="active"{% endif %}><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in" style="margin-right: 0.5em;"></span> Login </a></li>
+                            <li {% if request.path == login_url %}class="active"{% endif %}><a href="{% url "login" %}?next={{request.path}}"><span class="glyphicon glyphicon-log-in" style="margin-right: 0.5em;"></span> Login </a></li>
                         {% endif %}
                     </ul>
                 </div>
