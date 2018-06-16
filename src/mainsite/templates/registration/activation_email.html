@@ -1,0 +1,12 @@
+{% load i18n %}
+<p>{% trans "Hi" %} {{ request.user.get_username }},</p>
+
+<p>{% trans "Welcome to nyri0.fr!" %}<p>
+
+<p>{% trans "Use the following link to confirm your email:" %}
+<a href='{{ link }}'>{{ link }}</a></p>
+
+<p>{% trans "After confirmation, you will be able to comment on posts. Please make the comments space a place where it is pleasant for everyone to talk and share their opinion." %}</p>
+
+<p>---<br>
+{% trans "This is an auto-generated email. Please don't reply." %}</p>

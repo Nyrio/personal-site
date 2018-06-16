@@ -1,0 +1,166 @@
+# FRENCH TRANSLATIONS.
+# Louis Sugy 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-16 20:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: mainsite/forms.py:8
+msgid "Your email address"
+msgstr "Adresse email"
+
+#: mainsite/templates/base.html:11
+msgid "Personal website and devblog"
+msgstr "Site personnel et devblog"
+
+#: mainsite/templates/base.html:38
+msgid "About me"
+msgstr "Qui suis-je ?"
+
+#: mainsite/templates/base.html:66
+msgid "User settings"
+msgstr "Paramètres utilisateur"
+
+#: mainsite/templates/base.html:70
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: mainsite/templates/base.html:75
+#: mainsite/templates/registration/signup.html:6
+msgid "Sign Up"
+msgstr "Inscription"
+
+#: mainsite/templates/base.html:77 mainsite/templates/registration/login.html:6
+#: mainsite/templates/registration/login.html:14
+#: mainsite/templates/registration/password_reset_complete.html:11
+msgid "Login"
+msgstr "Connexion"
+
+#: mainsite/templates/registration/activate.html:6
+msgid "Email activation"
+msgstr "Activation de l'adresse email"
+
+#: mainsite/templates/registration/activate.html:12
+msgid "Email activation succeeded"
+msgstr "Adresse email activée avec succès"
+
+#: mainsite/templates/registration/activate.html:14
+msgid "Email activation failed"
+msgstr "Échec de la validation de l'adresse email"
+
+#: mainsite/templates/registration/activation_email.html:2
+#: mainsite/templates/registration/password_reset_email.html:2
+msgid "Hi"
+msgstr "Bonjour"
+
+#: mainsite/templates/registration/activation_email.html:4
+msgid "Welcome to nyri0.fr!"
+msgstr "Bienvenue sur nyri0.fr!"
+
+#: mainsite/templates/registration/activation_email.html:6
+msgid "Use the following link to confirm your email:"
+msgstr "Veuillez utiliser le lien suivant pour confirmer votre adresse email :"
+
+#: mainsite/templates/registration/activation_email.html:9
+msgid ""
+"After confirmation, you will be able to comment on posts. Please make the "
+"comments space a place where it is pleasant for everyone to talk and share "
+"their opinion."
+msgstr ""
+"Après confirmation, vous pourrez commenter sur les posts. Merci de faire de "
+"l'espace de commentaires un endroit où il est agréable à chacun de discuter "
+"et partager son opinion."
+
+#: mainsite/templates/registration/activation_email.html:12
+#: mainsite/templates/registration/password_reset_email.html:19
+msgid "This is an auto-generated email. Please don't reply."
+msgstr "Ceci est un email généré automatiquement. Merci de ne pas répondre."
+
+#: mainsite/templates/registration/login.html:15
+msgid "Forgot Password?"
+msgstr "Mot de passe oublié ?"
+
+#: mainsite/templates/registration/password_reset_complete.html:6
+#: mainsite/templates/registration/password_reset_confirm.html:6
+#: mainsite/templates/registration/password_reset_done.html:5
+#: mainsite/templates/registration/password_reset_form.html:6
+msgid "Reset password"
+msgstr "Réinitialisation du mot de passe"
+
+#: mainsite/templates/registration/password_reset_complete.html:10
+msgid "Password reset successfully"
+msgstr "Mot de passe réinitialisé avec succès"
+
+#: mainsite/templates/registration/password_reset_confirm.html:15
+#: mainsite/templates/registration/password_reset_form.html:14
+msgid "Submit"
+msgstr "Valider"
+
+#: mainsite/templates/registration/password_reset_confirm.html:18
+msgid "Password reset failed"
+msgstr "Échec du la réinitialisation de mot de passe"
+
+#: mainsite/templates/registration/password_reset_done.html:9
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+"Un email avec des instructions de réinitilisation du mot de passe a été "
+"envoyé"
+
+#: mainsite/templates/registration/password_reset_email.html:4
+msgid "You have requested a password reset for"
+msgstr "Vous avez demandé de réinitialiser votre mot de passe pour"
+
+#: mainsite/templates/registration/password_reset_email.html:6
+msgid "Please go to the following page and choose a new password:"
+msgstr "Merci de suivre le lien suivant et choisir un nouveau mot de passe :"
+
+#: mainsite/templates/registration/password_reset_email.html:14
+msgid "Thanks for using this site!"
+msgstr "Merci d'utiliser ce site !"
+
+#: mainsite/templates/registration/password_reset_email.html:16
+msgid ""
+"If you have not requested a password change, somebody is trying to access "
+"your account. Make sure the password of both your account and your email "
+"address are strong, and if you suspect that somebody has access to your "
+"email address, change its password immediately."
+msgstr ""
+"Si vous n'avez pas demandé de changement de mot de passe, quelqu'un essaie "
+"de se connecter à votre compte. Veuillez vous assurer que le mot de passe de "
+"votre compte et de votre adresse email sont forts, et si vous avez la "
+"moindre suspicion que quelqu'un ait accès à votre adresse email, changez "
+"votre mot de passe immédiatement."
+
+#: mainsite/templates/registration/password_reset_subject.txt:2
+msgid "Password reset for"
+msgstr "Réinitialisation du mot de passe pour"
+
+#: mainsite/views.py:45
+msgid "Email confirmation for nyri0.fr"
+msgstr "Confirmation de l'email pour nyri0.fr"
+
+#: mainsite/views.py:46
+msgid "Activate html to see this email."
+msgstr "Activez le html pour voir le contenu de cet email"
+
+#: nyri0site/settings.py:114
+msgid "English"
+msgstr "English"
+
+#: nyri0site/settings.py:115
+msgid "French"
+msgstr "Français"
+
+msgid "Email"
+msgstr "Email"

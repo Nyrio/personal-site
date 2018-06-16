@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load bootstrap %}
 
-{% block title %}Login | nyri0.fr{% endblock %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %} | nyri0.fr{% endblock %}
 
 {% block body %}
     <div id="mainbox" class="container material-box">
@@ -9,8 +11,8 @@
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}">
             {{ form|bootstrap }}
-            <button class="btn btn-primary">Login</button>
-            <a href="{% url 'password-reset' %}" class="btn btn-default">Forgot Password?</a>
+            <button class="btn btn-primary">{% trans "Login" %}</button>
+            <a href="{% url 'password-reset' %}" class="btn btn-default">{% trans "Forgot Password?" %}</a>
         </form>
     </div>
 {% endblock %}

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "nyri0.fr", "89.234.183.108"]
 # Application definition
 
 INSTALLED_APPS = [
+    'mainsite',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
     'bootstrapform',
     'simple_email_confirmation',
     'stdimage',
-    'mainsite',
 ]
 
 MIDDLEWARE = [
@@ -118,6 +118,10 @@ TIME_ZONE = 'Europe/Paris'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+LOCALE_PATHS = [
+    os.path.join(PROJECT_ROOT, 'locale'),
+]
 
 
 LOGIN_REDIRECT_URL = "/"

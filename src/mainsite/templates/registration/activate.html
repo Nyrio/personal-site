@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Email activation" %} | nyri0.fr{% endblock %}
+
+{% block body %}
+    <div id="mainbox" class="container material-box">
+        <p>
+        	{% if activate_success %}
+        		{% trans "Email activation succeeded" %}
+        	{% else %}
+        		{% trans "Email activation failed" %}
+        	{% endif %}
+        </p>
+    </div>
+{% endblock %}

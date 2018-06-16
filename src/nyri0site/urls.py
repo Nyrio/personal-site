@@ -1,11 +1,10 @@
 from django.contrib import admin
 from django.conf import settings
 from django.urls import path, re_path, reverse_lazy
-from django.conf.urls import url
 from django.conf.urls.i18n import i18n_patterns
 from django.views.static import serve
 from django.contrib.auth import views as auth_views
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as url_lazy
 
 from mainsite import views
 
@@ -21,19 +20,19 @@ urlpatterns += [
 ]
 
 urlpatterns += i18n_patterns(
-    path(_(''), views.index, name='index'),
-    path(_('about/'), views.about, name='about'),
-    path(_('blog/'), views.blog, name='blog'),
+    path(url_lazy(''), views.index, name='index'),
+    path(url_lazy('about/'), views.about, name='about'),
+    path(url_lazy('blog/'), views.blog, name='blog'),
 
-    path(_('signup/'), views.RegistrationView.as_view(), name="signup"),
-    path(_('activate/<key>/'), views.confirm_email, name="confirm_email"),
+    path(url_lazy('signup/'), views.RegistrationView.as_view(), name="signup"),
+    path(url_lazy('activate/<key>/'), views.confirm_email, name="confirm_email"),
 
-    path(_('accounts/login/'), auth_views.LoginView.as_view(), name='login'),
-    path(_('accounts/logout/'), auth_views.LogoutView.as_view(next_page=reverse_lazy("index")), name='logout'),
-    path(_('accounts/reset-password/'), auth_views.PasswordResetView.as_view(success_url=reverse_lazy("index")), name="password-reset"),
-    path(_('accounts/reset-password-done/'), auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
-    path(_('accounts/reset-password-confirm/<uidb64>/<token>/'), auth_views.PasswordResetConfirmView.as_view(success_url=reverse_lazy("index")),
-        name='password_reset_confirm'),
-    path(_('accounts/reset-password-complete/'), auth_views.PasswordResetCompleteView.as_view(),
-        name='password_reset_complete'),
+    path(url_lazy('accounts/login/'), auth_views.LoginView.as_view(), name='login'),
+    path(url_lazy('accounts/logout/'), auth_views.LogoutView.as_view(next_page=reverse_lazy("index")), name='logout'),
+    path(url_lazy('accounts/reset-password/'), auth_views.PasswordResetView.as_view(html_email_template_name="registration/password_reset_email.html"), name="password-reset"),
+    path(url_lazy('accounts/reset-password-done/'), auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+    path(url_lazy('accounts/reset-password-confirm/<uidb64>/<token>/'), auth_views.PasswordResetConfirmView.as_view(),
+         name='password_reset_confirm'),
+    path(url_lazy('accounts/reset-password-complete/'), auth_views.PasswordResetCompleteView.as_view(),
+         name='password_reset_complete'),
 )
