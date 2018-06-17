@@ -78,5 +78,11 @@ nav, .navbar {
 }
 
 .footer {
+    margin-top: 20px;
     text-align: center;
+}
+
+code {
+    color: #2040a0;
+    background-color: #f4f4ff;
 }

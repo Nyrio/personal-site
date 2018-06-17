@@ -7,6 +7,7 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 from simple_email_confirmation.models import EmailAddress
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language
 
 from .forms import CustomUserCreationForm, UserSettingsForm
 from .models import User
@@ -17,7 +18,9 @@ def index(request):
 
 
 def about(request):
-    return render(request, "about.html")
+    mdname = "CV_%s.md" % get_language()
+    cvmd = render_to_string(mdname)
+    return render(request, "about.html", context={"cvmd": cvmd})
 
 
 def blog(request):
