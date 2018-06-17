@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-16 20:30+0200\n"
+"POT-Creation-Date: 2018-06-17 17:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,28 +20,34 @@ msgstr ""
 msgid "Your email address"
 msgstr "Adresse email"
 
+#: mainsite/models.py:10
+msgid "Please use a square image to avoid cutting"
+msgstr "Merci d'utiliser une image carrée pour éviter le découpage"
+
 #: mainsite/templates/base.html:11
 msgid "Personal website and devblog"
 msgstr "Site personnel et devblog"
 
-#: mainsite/templates/base.html:38
+#: mainsite/templates/base.html:39
 msgid "About me"
 msgstr "Qui suis-je ?"
 
-#: mainsite/templates/base.html:66
+#: mainsite/templates/base.html:67
+#: mainsite/templates/registration/user_settings.html:6
 msgid "User settings"
 msgstr "Paramètres utilisateur"
 
-#: mainsite/templates/base.html:70
+#: mainsite/templates/base.html:71
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: mainsite/templates/base.html:75
+#: mainsite/templates/base.html:76
 #: mainsite/templates/registration/signup.html:6
+#: mainsite/templates/registration/signup.html:15
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: mainsite/templates/base.html:77 mainsite/templates/registration/login.html:6
+#: mainsite/templates/base.html:78 mainsite/templates/registration/login.html:6
 #: mainsite/templates/registration/login.html:14
 #: mainsite/templates/registration/password_reset_complete.html:11
 msgid "Login"
@@ -95,6 +101,7 @@ msgstr "Mot de passe oublié ?"
 #: mainsite/templates/registration/password_reset_confirm.html:6
 #: mainsite/templates/registration/password_reset_done.html:5
 #: mainsite/templates/registration/password_reset_form.html:6
+#: mainsite/templates/registration/user_settings.html:14
 msgid "Reset password"
 msgstr "Réinitialisation du mot de passe"
 
@@ -146,11 +153,27 @@ msgstr ""
 msgid "Password reset for"
 msgstr "Réinitialisation du mot de passe pour"
 
-#: mainsite/views.py:45
+#: mainsite/templates/registration/signup.html:14
+msgid ""
+"An email will be sent to your email address to confirm it. Verifying your "
+"email address allows you to post comments."
+msgstr ""
+"Un email va être envoyé à votre adresse pour la confirmer. Vérifier votre "
+"adresse vous ouvre le droit de commenter les posts."
+
+#: mainsite/templates/registration/user_settings.html:14
+msgid "(an email will be sent to your address)"
+msgstr "(un email sera envoyé à votre adresse)"
+
+#: mainsite/templates/registration/user_settings.html:15
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: mainsite/views.py:46
 msgid "Email confirmation for nyri0.fr"
 msgstr "Confirmation de l'email pour nyri0.fr"
 
-#: mainsite/views.py:46
+#: mainsite/views.py:47
 msgid "Activate html to see this email."
 msgstr "Activez le html pour voir le contenu de cet email"
 

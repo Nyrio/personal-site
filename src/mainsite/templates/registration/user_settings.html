@@ -3,7 +3,7 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Sign Up" %} | nyri0.fr{% endblock %}
+{% block title %}{% trans "User settings" %} | nyri0.fr{% endblock %}
 
 {% block body %}
     <div id="mainbox" class="container material-box">
@@ -11,8 +11,8 @@
             {% csrf_token %}
             {{ form|bootstrap }}
 
-            <p>{% trans "An email will be sent to your email address to confirm it. Verifying your email address allows you to post comments." %}</p>
-            <button class="btn btn-primary">{% trans "Sign Up" %}</button>
+            <p><a href="{% url 'password-reset' %}">{% trans "Reset password" %}</a> {% trans "(an email will be sent to your address)" %}</p>
+            <button class="btn btn-primary">{% trans "Update" %}</button>
         </form>
     </div>
 {% endblock %}

@@ -35,4 +35,5 @@ urlpatterns += i18n_patterns(
          name='password_reset_confirm'),
     path(url_lazy('accounts/reset-password-complete/'), auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
+    path(url_lazy('accounts/user-settings/'), views.UserSettingsView.as_view(), name='user_settings'),
 )
