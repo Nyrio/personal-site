@@ -86,3 +86,32 @@ code {
     color: #2040a0;
     background-color: #f4f4ff;
 }
+
+.material-box h2,
+.material-box h3,
+.material-box h4,
+.material-box h5,
+.material-box h6 {
+    color: #707072;
+}
+.material-box h1 {
+    color: #606062;
+    margin-top: 5px;
+    font-size: 32px;
+}
+.material-box h2 {
+    font-size: 28px;
+}
+.material-box h3 {
+    margin-top: 16px;
+    font-size: 24px;
+}
+.material-box h4 {
+    font-size: 20px;
+}
+.material-box h5 {
+    font-size: 18px;
+}
+.material-box h6 {
+    font-size: 16px;
+}
