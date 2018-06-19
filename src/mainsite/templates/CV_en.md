@@ -6,8 +6,8 @@
 | Years | Position | Company, details |
 | ----- | -------- | ---------------- |
 | 2018 | **Software Engineer Intern** | *[NVIDIA](https://en.wikipedia.org/wiki/Nvidia)*, Helsinki %newline% Autonomous vehicles software sanity
-| 2017 | **R&D Intern** | *[Dontnod Entertainment](https://en.wikipedia.org/wiki/Dontnod_Entertainment)*, Paris %newline% Research on various technical subjects for the developers.
-| 2016/17 | **In-home tutor** | *Complétude*, Lyon %newline% Tutoring in mathematics for high school students.
+| 2017 | **R&D Intern** | *[Dontnod Entertainment](https://en.wikipedia.org/wiki/Dontnod_Entertainment)*, Paris %newline% Research on various technical subjects for the developers
+| 2016/17 | **In-home tutor** | *Complétude*, Lyon %newline% Tutoring in mathematics for high school students
 
 
 ## Education
@@ -69,7 +69,7 @@ See some more projects on [GitHub](https://github.com/Nyrio/).
 
  - 2017: **Shaker Coding Battle** - 9th /3090
  - 2014/17: **Prologin** - 4-time finalist, 22nd in 2017
- - 2016/17: Battle Dev - 10th /2030 in Nov. 2017, 25th /2306 in Mar. 2017, 30th /2490 in Nov. 2017
+ - 2016/17: **Battle Dev** - 10th /2030 in Nov. 2017, 25th /2306 in Mar. 2017, 30th /2490 in Nov. 2017
 
 ### Hobbies
 
