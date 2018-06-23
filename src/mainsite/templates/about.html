@@ -8,11 +8,11 @@
     <meta property="og:title" content="Louis Sugy - CV">
     <meta property="og:description" content="Louis Sugy's online CV">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nyri0.fr/about">
+    <meta property="og:url" content="{{ request.get_full_path }}">
 {% endblock %}
 
 {% block body %}
     <div id="mainbox" class="container material-box">
-        {{ cvmd|parse_markdown }}
+        {{ cvmd|parse_post_markdown }}
     </div>
 {% endblock %}

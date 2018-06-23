@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load misc_tags %}
+{% load static %}
+
+{% load i18n %}
+
+{% block addjs %}
+    <script src="{% static "js/jdenticon.min.js" %}"></script>
+{% endblock %}
+
+{% with blogpost=object %}
+
+    {% block title %}
+        {% get_current_language as language %}
+        {% if language == 'fr' %}
+            {{ blogpost.title_fr }}
+        {% else %}
+            {{ blogpost.title_en }}
+        {% endif %}
+    {% endblock %}
+
+    {% block meta %}
+        {% get_current_language as language %}
+        <meta property="og:title" content="{% if language == 'fr' %}{{ blogpost.title_fr }}{% else %}{{ blogpost.title_en }}{% endif %}">
+        <meta property="og:description" content="{% if language == 'fr' %}{{ blogpost.description_fr }}{% else %}{{ blogpost.description_en }}{% endif %}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ request.build_absolute_uri }}">
+        <meta property="og:image" content="{% absolute_uri request blogpost.cover_picture.ogtag.url %}">
+    {% endblock %}
+
+    {% block body %}
+        {% get_current_language as language %}
+        <div id="mainbox" class="container material-box">
+            {% if language == 'fr' %}
+                {{ blogpost.text_fr|safe|parse_post_markdown }}
+            {% else %}
+                {{ blogpost.text_en|safe|parse_post_markdown }}
+            {% endif %}
+        </div>
+        <div id="comments">
+            {% for comment in comments %}
+                <div id="com{{ comment.pk }}" class="container material-box">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-2">
+                            {% if comment.user.avatar %}
+                                <img class="img img-responsive img-rounded" src="{{ comment.user.avatar.comment.url }}">
+                            {% else %}
+                                <svg class="img img-responsive img-rounded" width="256" height="256" data-jdenticon-value="{{ comment.user.username }}"></svg>
+                            {% endif %}
+                        </div>
+                        <div class="col-xs-9 col-sm-10">
+                            <strong class="comment-pseudo"><a href="#com{{ comment.pk }}"><span class="glyphicon glyphicon-link" style="margin-right: 0.25em;"></span></a>{{ comment.user.username }}</strong>
+                            {{ comment.text|safe|parse_comment_markdown }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
+
+{% endwith %}

@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
 
 from .forms import CustomUserCreationForm, UserSettingsForm
-from .models import User
+from .models import User, BlogPost  # , BlogComment
 
 
 def index(request):
@@ -25,6 +25,23 @@ def about(request):
 
 def blog(request):
     return render(request, "blog.html")
+
+
+class BlogPostView(generic.DetailView):
+    """View where the user can play a game that they have purchased and see scores.
+    """
+
+    model = BlogPost
+    template_name = "blogpost.html"
+
+    def get_context_data(self, **kwargs):
+        """ Add some info in context (e.g comments)
+        """
+
+        context = super().get_context_data(**kwargs)
+        blogpost = context["object"]
+        context["comments"] = blogpost.comments.all()
+        return context
 
 
 # User account and registration
@@ -65,10 +82,7 @@ class UserSettingsView(generic.UpdateView):
     def get_object(self, queryset=None):
         """ Gets the current user.
         """
-        if not self.request.user.is_authenticated:
-            return HttpResponseRedirect(reverse("login"))
-        else:
-            return self.request.user
+        return self.request.user
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

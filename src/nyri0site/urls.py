@@ -5,6 +5,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.views.static import serve
 from django.contrib.auth import views as auth_views
 from django.utils.translation import ugettext_lazy as url_lazy
+from django.contrib.auth.decorators import login_required
 
 from mainsite import views
 
@@ -23,6 +24,7 @@ urlpatterns += i18n_patterns(
     path(url_lazy(''), views.index, name='index'),
     path(url_lazy('about/'), views.about, name='about'),
     path(url_lazy('blog/'), views.blog, name='blog'),
+    path(url_lazy('blog/<int:pk>'), views.BlogPostView.as_view(), name='blogpost'),
 
     path(url_lazy('signup/'), views.RegistrationView.as_view(), name="signup"),
     path(url_lazy('activate/<key>/'), views.confirm_email, name="confirm_email"),
@@ -35,5 +37,5 @@ urlpatterns += i18n_patterns(
          name='password_reset_confirm'),
     path(url_lazy('accounts/reset-password-complete/'), auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
-    path(url_lazy('accounts/user-settings/'), views.UserSettingsView.as_view(), name='user_settings'),
+    path(url_lazy('accounts/user-settings/'), login_required(views.UserSettingsView.as_view()), name='user_settings'),
 )

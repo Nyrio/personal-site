@@ -32,6 +32,7 @@ nav, .navbar {
     border-radius: 3px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 10px;
 
     -webkit-transition: -webkit-transform 250ms, -webkit-box-shadow 250ms;
     transition: transform 250ms, box-shadow 250ms;
@@ -114,4 +115,10 @@ code {
 }
 .material-box h6 {
     font-size: 16px;
+}
+
+.comment-pseudo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: -10px;
 }

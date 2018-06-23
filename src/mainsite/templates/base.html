@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{% block title %}Nyri0 - Louis Sugy{% endblock %}</title>
+    <meta property="og:site_name" content="nyri0.fr">
     {% block meta %}
         <meta property="og:title" content="Nyri0 - Louis Sugy">
         <meta property="og:description" content="{% trans 'Personal website and devblog' %}.">
@@ -89,6 +90,7 @@
         {% block body %}{% endblock %}
         <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
         <script src="{% static "js/bootstrap.min.js" %}"></script>
+        {% block addjs %}{% endblock %}
     </div>
 
     <footer>
