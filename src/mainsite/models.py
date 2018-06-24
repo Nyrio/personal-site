@@ -23,11 +23,12 @@ class User(SimpleEmailConfirmationUserMixin, AbstractUser):
 class Category(models.Model):
     """ Category for a blog post.
     """
-    name = models.CharField(max_length=64, unique=True)
+    name_fr = models.CharField(max_length=64, unique=True)
+    name_en = models.CharField(max_length=64, unique=True)
     glyphicon_name = models.CharField(max_length=64)
 
     def __str__(self):
-        return self.name
+        return self.name_en
 
     class Meta:
         verbose_name_plural = "categories"
@@ -42,7 +43,7 @@ class BlogPost(models.Model):
     description_en = models.TextField(max_length=512)
     text_fr = models.TextField()
     text_en = models.TextField()
-    cover_picture = StdImageField(upload_to='coverpics', blank=True,
+    cover_picture = StdImageField(upload_to='coverpics',
       help_text=_("Cut in 21:9 for both on-site display and sharing"),
       variations={
           'gridview': {"width": 504, "height": 216, "crop": True},

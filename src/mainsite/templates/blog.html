@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% load misc_tags %}
 {% load static %}
+{% load bootstrap %}
+
+{% load i18n %}
 
 {% block title %}Nyri0 - Blog{% endblock %}
 
@@ -7,12 +11,46 @@
     <meta property="og:title" content="Nyri0 - Blog">
     <meta property="og:description" content="Nyri0's devblog: updates and opinions">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.get_full_path }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
+{% block addnavright %}
+    <li class="hidden-xs"><a data-toggle="collapse" href="#searchbox"><span class="glyphicon glyphicon-search"></span></a></li>
+    <li class="visible-xs"><a data-toggle="collapse" href="#searchbox"><span class="glyphicon glyphicon-search" style="margin-right: 0.5em;"></span> {% trans "Search" %} </a></li>
 {% endblock %}
 
 {% block body %}
-    <div id="mainbox" class="container material-box">
-        <h1>Welcome to nyri0.fr!</h1>
-        <p>WIP: a devblog will be added here</p>
+    {% get_current_language as language %}
+    <div id="searchbox" class="collapse">
+        <div class="container material-box">
+            <form method="GET">
+                {{ form|bootstrap }}
+                <a class="btn btn-default" data-toggle="collapse" href="#searchbox">{% trans "Close" %}</a>
+                <button class="btn btn-primary">{% trans "Search" %}</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="grid-wrapper row">
+            {% for blogpost in object_list %}
+                <a href="{% url 'blogpost' blogpost.pk %}">
+                    <div class="griditem col-xs-12 col-sm-6 col-md-4">
+                        <div class="material-box clickable-box col-xs-12">
+                            <div class="grid-image-wrapper">
+                                <img src="{{ blogpost.cover_picture.gridview.url }}" alt=" {% trans 'Blog post cover' %}">
+                            </div>
+                            <div class="grid-text-wrapper">
+                                <h3>{% if language == 'fr' %}{{ blogpost.title_fr }}{% else %}{{ blogpost.title_en }}{% endif %}</h3>
+                                {% if language == 'fr' %}
+                                    {{ blogpost.description_fr|safe|parse_comment_markdown }}
+                                {% else %}
+                                    {{ blogpost.description_en|safe|parse_comment_markdown }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

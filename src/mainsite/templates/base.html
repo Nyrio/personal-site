@@ -47,6 +47,8 @@
                         <li class="visible-xs"><a href="https://www.linkedin.com/in/louis-sugy/"><img class="bar-lone-icon-xs" src="{% static 'icons/linkedin.svg' %}"> LinkedIn</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        {% block addnavright %}{% endblock %}
+
                         {% get_current_language as language %}
                         {% if language == "en" %}
                             <li><a href="/fr{{ request.get_full_path|slice:'3:' }}" lang="fr">FR</a></li>

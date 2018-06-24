@@ -8,7 +8,7 @@
     <meta property="og:title" content="Louis Sugy - CV">
     <meta property="og:description" content="Louis Sugy's online CV">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.get_full_path }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
 {% endblock %}
 
 {% block body %}

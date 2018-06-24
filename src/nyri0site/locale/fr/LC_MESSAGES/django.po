@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-17 22:36+0200\n"
+"POT-Creation-Date: 2018-06-24 18:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,50 +16,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: mainsite/forms.py:8
+#: mainsite/forms.py:14
 msgid "Your email address"
 msgstr "Adresse email"
 
-#: mainsite/models.py:10
+#: mainsite/forms.py:35
+msgid "any category"
+msgstr "toute catégorie"
+
+#: mainsite/forms.py:43
+msgid "Keywords"
+msgstr "Mots clés"
+
+#: mainsite/forms.py:44
+msgid "Category"
+msgstr "Catégorie"
+
+#: mainsite/models.py:13
 msgid "Please use a square image to avoid cutting"
 msgstr "Merci d'utiliser une image carrée pour éviter le découpage"
 
-#: mainsite/templates/base.html:11
+#: mainsite/models.py:47
+msgid "Cut in 21:9 for both on-site display and sharing"
+msgstr "Coupée en 21:9 pour affichage sur site et partage"
+
+#: mainsite/models.py:66
+msgid "You can use markdown formatting"
+msgstr "Vous pouvez utiliser la mise en forme markdown"
+
+#: mainsite/templates/base.html:12
 msgid "Personal website and devblog"
 msgstr "Site personnel et devblog"
 
-#: mainsite/templates/base.html:39
+#: mainsite/templates/base.html:41
 msgid "CV"
 msgstr "CV"
 
-#: mainsite/templates/base.html:71
+#: mainsite/templates/base.html:75
 #: mainsite/templates/registration/user_settings.html:6
 msgid "User settings"
 msgstr "Paramètres utilisateur"
 
-#: mainsite/templates/base.html:75
+#: mainsite/templates/base.html:79
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: mainsite/templates/base.html:80
+#: mainsite/templates/base.html:84
 #: mainsite/templates/registration/signup.html:6
 #: mainsite/templates/registration/signup.html:15
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: mainsite/templates/base.html:82 mainsite/templates/registration/login.html:6
+#: mainsite/templates/base.html:86 mainsite/templates/registration/login.html:6
 #: mainsite/templates/registration/login.html:14
 #: mainsite/templates/registration/password_reset_complete.html:11
 msgid "Login"
 msgstr "Connexion"
 
-#: mainsite/templates/base.html:95
+#: mainsite/templates/base.html:100
 msgid ""
 "<p>The <a href=\"https://github.com/Nyrio/personal-site\">code of this "
 "website</a> is libre and open source.</p>"
 msgstr ""
 "<p>Le <a href=\"https://github.com/Nyrio/personal-site\">code de ce site</a> "
 "est libre et open source.</p>"
+
+#: mainsite/templates/blog.html:19 mainsite/templates/blog.html:29
+msgid "Search"
+msgstr "Rechercher"
+
+#: mainsite/templates/blog.html:28
+msgid "Close"
+msgstr "Fermer"
 
 #: mainsite/templates/registration/activate.html:6
 msgid "Email activation"
@@ -177,19 +205,19 @@ msgstr "(un email sera envoyé à votre adresse)"
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: mainsite/views.py:49
+#: mainsite/views.py:121
 msgid "Email confirmation for nyri0.fr"
 msgstr "Confirmation de l'email pour nyri0.fr"
 
-#: mainsite/views.py:50
+#: mainsite/views.py:122
 msgid "Activate html to see this email."
 msgstr "Activez le html pour voir le contenu de cet email"
 
-#: nyri0site/settings.py:114
+#: nyri0site/settings.py:117
 msgid "English"
 msgstr "English"
 
-#: nyri0site/settings.py:115
+#: nyri0site/settings.py:118
 msgid "French"
 msgstr "Français"
 

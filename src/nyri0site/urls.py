@@ -23,7 +23,7 @@ urlpatterns += [
 urlpatterns += i18n_patterns(
     path(url_lazy(''), views.index, name='index'),
     path(url_lazy('about/'), views.about, name='about'),
-    path(url_lazy('blog/'), views.blog, name='blog'),
+    path(url_lazy('blog/'), views.BlogView.as_view(), name='blog'),
     path(url_lazy('blog/<int:pk>'), views.BlogPostView.as_view(), name='blogpost'),
 
     path(url_lazy('signup/'), views.RegistrationView.as_view(), name="signup"),
