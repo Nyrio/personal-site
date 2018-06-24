@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load misc_tags %}
 {% load static %}
+{% load bootstrap %}
 
 {% load i18n %}
 
@@ -28,6 +29,13 @@
         <meta property="og:image" content="{% absolute_uri request blogpost.cover_picture.ogtag.url %}">
     {% endblock %}
 
+    {% if request.user.is_authenticated %}
+        {% block addnavright %}
+            <li class="hidden-xs"><a href="#commentForm"><span class="glyphicon glyphicon-menu-down"></span></a></li>
+            <li class="visible-xs"><a href="#commentForm"><span class="glyphicon glyphicon-menu-down" style="margin-right: 0.5em;"></span> {% trans "To bottom" %} </a></li>
+        {% endblock %}
+    {% endif %}
+
     {% block body %}
         {% get_current_language as language %}
         <div id="mainbox" class="container material-box">
@@ -49,13 +57,26 @@
                             {% endif %}
                         </div>
                         <div class="col-xs-9 col-sm-10">
-                            <strong class="comment-pseudo"><a href="#com{{ comment.pk }}"><span class="glyphicon glyphicon-link" style="margin-right: 0.25em;"></span></a>{{ comment.user.username }}</strong>
+                            <strong class="comment-pseudo">
+                                <a href="#com{{ comment.pk }}"><span class="glyphicon glyphicon-link" style="margin-right: 0.25em;"></span></a>
+                                {{ comment.user.username }}
+                            </strong>
+                            <span style="margin-right: 0.5em;"></span><i>({{ comment.date|date:'Y-m-d H:i' }})</i>
                             {{ comment.text|safe|parse_comment_markdown }}
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
+        {% if request.user.is_authenticated %}
+            <div id="commentForm" class="container material-box">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form|bootstrap }}
+                    <button class="btn btn-primary">{% trans "Send" %}</button>
+                </form>
+            </div>
+        {% endif %}
     {% endblock %}
 
 {% endwith %}

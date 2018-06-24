@@ -40,7 +40,10 @@
                                 <img src="{{ blogpost.cover_picture.gridview.url }}" alt=" {% trans 'Blog post cover' %}">
                             </div>
                             <div class="grid-text-wrapper">
-                                <h3>{% if language == 'fr' %}{{ blogpost.title_fr }}{% else %}{{ blogpost.title_en }}{% endif %}</h3>
+                                <p class="grid-item-title">{% if language == 'fr' %}{{ blogpost.title_fr }}{% else %}{{ blogpost.title_en }}{% endif %}</p>
+                                <p><i>{{ blogpost.date|date:'Y-m-d H:i' }}</i>
+                                <span style="margin-right: 0.5em;"></span>- 
+                                <span class="glyphicon {{ blogpost.category.glyphicon_name }}" style="margin-left: 0.5em; margin-right: 0.2em;"></span> {% if language == 'fr' %}{{ blogpost.category.name_fr }}{% else %}{{ blogpost.category.name_en }}{% endif %}</p>
                                 {% if language == 'fr' %}
                                     {{ blogpost.description_fr|safe|parse_comment_markdown }}
                                 {% else %}

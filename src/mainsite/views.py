@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template.loader import render_to_string
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.views import generic
 from django.urls import reverse, reverse_lazy
 from django.core.mail import send_mail
@@ -9,8 +9,11 @@ from simple_email_confirmation.models import EmailAddress
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
 
-from .forms import CustomUserCreationForm, UserSettingsForm, BlogSearchForm
+from .forms import CustomUserCreationForm, UserSettingsForm, BlogSearchForm, CommentForm
 from .models import User, BlogPost  # , BlogComment
+
+
+import pdb
 
 
 def index(request):
@@ -82,21 +85,63 @@ class BlogView(generic.ListView):
         return context
 
 
-class BlogPostView(generic.DetailView):
-    """View where the user can play a game that they have purchased and see scores.
+class BlogPostView(generic.DetailView, generic.edit.FormMixin):
+    """ View of a blog post and its comments.
     """
 
     model = BlogPost
     template_name = "blogpost.html"
+    form_class = CommentForm
 
     def get_context_data(self, **kwargs):
-        """ Add some info in context (e.g comments)
+        """ Add some info in context (e.g comments and form to post)
         """
 
         context = super().get_context_data(**kwargs)
         blogpost = context["object"]
         context["comments"] = blogpost.comments.all()
+
+        context["form"] = CommentForm(initial={"user": self.request.user,
+                                               "blogpost": self.get_object()})
+
         return context
+
+    def post(self, request, *args, **kwargs):
+        """ Handle comments on POST requests.
+        """
+        print("hellooooww")
+
+        if not request.user.is_authenticated:
+            return HttpResponseForbidden()
+
+        form = self.get_form()
+        self.object = self.get_object()
+
+        # pdb.set_trace()
+
+        if form.is_valid():
+            print("heyyyy")
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        """ Post the comment if the form is valid.
+        """
+        print(form.cleaned_data)
+        if form.cleaned_data["user"] != self.request.user:
+            return self.form_invalid(form)
+        if form.cleaned_data["blogpost"] != self.get_object():
+            return self.form_invalid(form)
+        print("coucou")
+        form.save()
+        return super(BlogPostView, self).form_valid(form)
+
+    def form_invalid(self, form):
+        return super(BlogPostView, self).form_invalid(form)
+
+    def get_success_url(self):
+        return reverse_lazy("blogpost", kwargs={'pk': self.get_object().pk})
 
 
 # User account and registration

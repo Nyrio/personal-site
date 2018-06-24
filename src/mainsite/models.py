@@ -56,6 +56,9 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title_en
 
+    class Meta:
+        ordering = ['-date']
+
 
 class BlogComment(models.Model):
     """ Comment written by a user on a blog post.
@@ -63,7 +66,9 @@ class BlogComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blogpost = models.ForeignKey(BlogPost, on_delete=models.CASCADE,
                                  related_name="comments")
-    text = models.TextField(help_text=_("You can use markdown formatting"))
+    text = models.TextField(verbose_name=_("Comment"),
+                            help_text=_("You can use markdown formatting"))
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return "%s - %s - %s" % (self.blogpost.title_en, self.user.username,

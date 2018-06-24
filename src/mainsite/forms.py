@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
-from .models import Category
+from .models import Category, BlogComment
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -42,3 +42,17 @@ class BlogSearchForm(forms.Form):
 
     keywords = forms.CharField(label=_("Keywords"), max_length=128, required=False, )
     category = forms.ChoiceField(label=_("Category"), choices=category_choices, required=False, )
+
+
+class CommentForm(forms.ModelForm):
+    """ Provides a form to post a comment on a blog post.
+    """
+
+    class Meta:
+        model = BlogComment
+        fields = ("text", "user", "blogpost",)
+        widgets = {
+          'text': forms.Textarea(attrs={'rows': 4, }),
+          "user": forms.HiddenInput(),
+          "blogpost": forms.HiddenInput(),
+        }
