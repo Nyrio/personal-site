@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-24 18:37+0200\n"
+"POT-Creation-Date: 2018-06-25 01:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,11 @@ msgstr "Merci d'utiliser une image carrée pour éviter le découpage"
 msgid "Cut in 21:9 for both on-site display and sharing"
 msgstr "Coupée en 21:9 pour affichage sur site et partage"
 
-#: mainsite/models.py:66
+#: mainsite/models.py:69
+msgid "Comment"
+msgstr "Commentaire"
+
+#: mainsite/models.py:70
 msgid "You can use markdown formatting"
 msgstr "Vous pouvez utiliser la mise en forme markdown"
 
@@ -88,6 +92,18 @@ msgstr "Rechercher"
 #: mainsite/templates/blog.html:28
 msgid "Close"
 msgstr "Fermer"
+
+#: mainsite/templates/blog.html:40
+msgid "Blog post cover"
+msgstr "Image de couverture du post"
+
+#: mainsite/templates/blogpost.html:36
+msgid "To bottom"
+msgstr "Bas de la page"
+
+#: mainsite/templates/blogpost.html:77
+msgid "Send"
+msgstr "Envoyer"
 
 #: mainsite/templates/registration/activate.html:6
 msgid "Email activation"
@@ -205,11 +221,11 @@ msgstr "(un email sera envoyé à votre adresse)"
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: mainsite/views.py:121
+#: mainsite/views.py:166
 msgid "Email confirmation for nyri0.fr"
 msgstr "Confirmation de l'email pour nyri0.fr"
 
-#: mainsite/views.py:122
+#: mainsite/views.py:167
 msgid "Activate html to see this email."
 msgstr "Activez le html pour voir le contenu de cet email"
 
