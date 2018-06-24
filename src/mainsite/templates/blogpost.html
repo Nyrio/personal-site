@@ -29,12 +29,13 @@
         <meta property="og:image" content="{% absolute_uri request blogpost.cover_picture.ogtag.url %}">
     {% endblock %}
 
-    {% if request.user.is_authenticated %}
-        {% block addnavright %}
+    
+    {% block addnavright %}
+        {% if request.user.is_confirmed %}
             <li class="hidden-xs"><a href="#commentForm"><span class="glyphicon glyphicon-menu-down"></span></a></li>
             <li class="visible-xs"><a href="#commentForm"><span class="glyphicon glyphicon-menu-down" style="margin-right: 0.5em;"></span> {% trans "To bottom" %} </a></li>
-        {% endblock %}
-    {% endif %}
+        {% endif %}
+    {% endblock %}
 
     {% block body %}
         {% get_current_language as language %}
@@ -68,7 +69,7 @@
                 </div>
             {% endfor %}
         </div>
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_confirmed %}
             <div id="commentForm" class="container material-box">
                 <form action="" method="POST">
                     {% csrf_token %}

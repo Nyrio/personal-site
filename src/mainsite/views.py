@@ -111,7 +111,7 @@ class BlogPostView(generic.DetailView, generic.edit.FormMixin):
         """
         print("hellooooww")
 
-        if not request.user.is_authenticated:
+        if not request.user.is_authenticated or not request.user.is_confirmed:
             return HttpResponseForbidden()
 
         form = self.get_form()
