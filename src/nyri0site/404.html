@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Error 404: page not found" %}{% endblock %}
+
+{% block body %}
+    <div id="mainbox" class="container material-box">
+        {% trans "Error 404: the page you are trying to access doesn't exist anymore, or has never existed." %}"
+    </div>
+{% endblock %}

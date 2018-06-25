@@ -13,6 +13,7 @@ uwsgi_params
 
 # Private files
 private_settings.py
+context_settings.py
 
 # Editor
 *.sublime-project

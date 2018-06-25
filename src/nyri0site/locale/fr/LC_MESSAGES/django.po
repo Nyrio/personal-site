@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-25 01:46+0200\n"
+"POT-Creation-Date: 2018-06-25 02:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -229,11 +229,48 @@ msgstr "Confirmation de l'email pour nyri0.fr"
 msgid "Activate html to see this email."
 msgstr "Activez le html pour voir le contenu de cet email"
 
-#: nyri0site/settings.py:117
+#: nyri0site/400.html:5
+msgid "Error 400: bad request"
+msgstr "Erreur 400 : mauvaise requête"
+
+#: nyri0site/400.html:9
+msgid "Error 400: your request is incorrect or corrupted."
+msgstr "Erreur 400 : la requête que vous envoyez est incorrecte ou corrompue."
+
+#: nyri0site/403.html:5
+msgid "Error 403: forbidden"
+msgstr "Erreur 403 : action interdite"
+
+#: nyri0site/403.html:9
+msgid ""
+"Error 403: you don't have the permissions for the action you're attempting."
+msgstr "Erreur 403 : vous n'avez pas la permission requise pour l'action que vous tentez."
+
+#: nyri0site/404.html:5
+msgid "Error 404: page not found"
+msgstr "Erreur 404 : page non trouvée"
+
+#: nyri0site/404.html:9
+msgid ""
+"Error 404: the page you are trying to access doesn't exist anymore, or has "
+"never existed."
+msgstr "Erreur 404 : la page à laquelle vous essayez d'accéder n'existe pas ou plus"
+
+#: nyri0site/500.html:5
+msgid "Error 500: internal server error"
+msgstr "Erreur 500 : erreur interne au serveur"
+
+#: nyri0site/500.html:9
+msgid ""
+"Error 500: internal server error ; either I messed up or you're not using "
+"the website correctly."
+msgstr "Erreur 500 : erreur interne au serveur ; soit il y a un problème dans le code, soit vous utilisez mal le site."
+
+#: nyri0site/settings.py:109
 msgid "English"
 msgstr "English"
 
-#: nyri0site/settings.py:118
+#: nyri0site/settings.py:110
 msgid "French"
 msgstr "Français"
 

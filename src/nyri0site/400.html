@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Error 400: bad request" %}{% endblock %}
+
+{% block body %}
+    <div id="mainbox" class="container material-box">
+        {% trans "Error 400: your request is incorrect or corrupted." %}"
+    </div>
+{% endblock %}

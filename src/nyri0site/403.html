@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Error 403: forbidden" %}{% endblock %}
+
+{% block body %}
+    <div id="mainbox" class="container material-box">
+        {% trans "Error 403: you don't have the permissions for the action you're attempting." %}"
+    </div>
+{% endblock %}

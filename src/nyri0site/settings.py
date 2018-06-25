@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 import sys
 from .private_settings import *
+from .context_settings import *
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,16 +21,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(PROJECT_ROOT + "/../lib")
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r*n#kfm_c3hgke_19q3x-2)jio0oc+*oq&(w8%78pj8f#720af'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "nyri0.fr", "89.234.183.108"]
+ALLOWED_HOSTS = ["nyri0.fr", "89.234.183.108"]
 
 
 # Application definition
