@@ -39,3 +39,8 @@ urlpatterns += i18n_patterns(
          name='password_reset_complete'),
     path(url_lazy('accounts/user-settings/'), login_required(views.UserSettingsView.as_view()), name='user_settings'),
 )
+
+handler404 = 'mainsite.views.handler404'
+handler500 = 'mainsite.views.handler500'
+handler403 = 'mainsite.views.handler403'
+handler400 = 'mainsite.views.handler400'
