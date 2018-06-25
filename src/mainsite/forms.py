@@ -10,6 +10,8 @@ class CustomUserCreationForm(UserCreationForm):
     """ Extension of the default user creation form to add the email
     confirmation and the profile picture.
     """
+    error_css_class = "field-error"
+    required_css_class = "field-required"
 
     email = forms.EmailField(label=_("Your email address"))
 
@@ -21,6 +23,8 @@ class CustomUserCreationForm(UserCreationForm):
 class UserSettingsForm(forms.ModelForm):
     """ Provides a form to edit some account settings
     """
+    error_css_class = "field-error"
+    required_css_class = "field-required"
 
     class Meta:
         model = get_user_model()
@@ -30,6 +34,8 @@ class UserSettingsForm(forms.ModelForm):
 class BlogSearchForm(forms.Form):
     """ Provides a form to sort blog posts
     """
+    error_css_class = "field-error"
+    required_css_class = "field-required"
 
     def category_choices():
         choices = [("", _("any category"))]
@@ -47,6 +53,8 @@ class BlogSearchForm(forms.Form):
 class CommentForm(forms.ModelForm):
     """ Provides a form to post a comment on a blog post.
     """
+    error_css_class = "field-error"
+    required_css_class = "field-required"
 
     class Meta:
         model = BlogComment
