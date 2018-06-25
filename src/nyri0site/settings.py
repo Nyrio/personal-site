@@ -21,9 +21,6 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(PROJECT_ROOT + "/../lib")
 
 
-ALLOWED_HOSTS = ["nyri0.fr", "89.234.183.108"]
-
-
 # Application definition
 
 INSTALLED_APPS = [
