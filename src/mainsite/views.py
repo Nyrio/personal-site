@@ -211,28 +211,16 @@ def confirm_email(request, key):
 # Error pages
 
 def handler404(request):
-    response = render_to_response('404.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 404
-    return response
+    return render(request, '404.html', {})
 
 
 def handler500(request):
-    response = render_to_response('500.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 500
-    return response
+    return render(request, '500.html', {})
 
 
 def handler403(request):
-    response = render_to_response('403.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 404
-    return response
+    return render(request, '403.html', {})
 
 
 def handler400(request):
-    response = render_to_response('400.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 500
-    return response
+    return render(request, '400.html', {})
