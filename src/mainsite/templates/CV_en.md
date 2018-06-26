@@ -38,7 +38,8 @@
 
 ### Programming languages
 
- - Mastered: Python, C++
+ - Mastered: Python
+ - Good level: C++
  - Projects in: Java, C#, Caml, JS, TypeScript
  - Notions: Ruby, Haskell, Swift, PHP, Lua, Curry, *etc*
 

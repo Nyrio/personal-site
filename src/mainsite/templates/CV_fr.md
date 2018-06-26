@@ -38,11 +38,12 @@
 
 ### Langages de programmation
 
- - Maîtrisés : Python, C++
+ - Maîtrisé : Python
+ - Bon niveau : C++
  - Projets en : Java, C#, Caml, JS, TypeScript
  - Notions : Ruby, Haskell, Swift, PHP, Lua, Curry, *etc*
 
-## Personel
+## Personnel
 
 ### Bénévolat
 
