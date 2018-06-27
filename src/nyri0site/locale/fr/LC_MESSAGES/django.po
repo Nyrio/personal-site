@@ -1,12 +1,11 @@
 # FRENCH TRANSLATIONS.
 # Louis Sugy 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-25 02:25+0200\n"
+"POT-Creation-Date: 2018-06-27 09:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,19 +15,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: mainsite/forms.py:14
+#: mainsite/feeds.py:10
+msgid "Nyri0's Devblog"
+msgstr "Devblog de Nyri0"
+
+#: mainsite/feeds.py:13
+msgid "Updates on blog entries - English version."
+msgstr "Les nouveaux articles du blog - version française"
+
+#: mainsite/forms.py:16
 msgid "Your email address"
 msgstr "Adresse email"
 
-#: mainsite/forms.py:35
+#: mainsite/forms.py:41
 msgid "any category"
 msgstr "toute catégorie"
 
-#: mainsite/forms.py:43
+#: mainsite/forms.py:49
 msgid "Keywords"
 msgstr "Mots clés"
 
-#: mainsite/forms.py:44
+#: mainsite/forms.py:50
 msgid "Category"
 msgstr "Catégorie"
 
@@ -48,6 +55,48 @@ msgstr "Commentaire"
 msgid "You can use markdown formatting"
 msgstr "Vous pouvez utiliser la mise en forme markdown"
 
+#: mainsite/templates/400.html:5
+msgid "Error 400: bad request"
+msgstr "Erreur 400 : mauvaise requête"
+
+#: mainsite/templates/400.html:9
+msgid "Error 400: your request is incorrect or corrupted."
+msgstr "Erreur 400 : la requête que vous envoyez est incorrecte ou corrompue."
+
+#: mainsite/templates/403.html:5
+msgid "Error 403: forbidden"
+msgstr "Erreur 403 : action interdite"
+
+#: mainsite/templates/403.html:9
+msgid ""
+"Error 403: you don't have the permissions for the action you're attempting."
+msgstr ""
+"Erreur 403 : vous n'avez pas la permission requise pour l'action que vous "
+"tentez."
+
+#: mainsite/templates/404.html:5
+msgid "Error 404: page not found"
+msgstr "Erreur 404 : page non trouvée"
+
+#: mainsite/templates/404.html:9
+msgid ""
+"Error 404: the page you are trying to access doesn't exist anymore, or has "
+"never existed."
+msgstr ""
+"Erreur 404 : la page à laquelle vous essayez d'accéder n'existe pas ou plus"
+
+#: mainsite/templates/500.html:5
+msgid "Error 500: internal server error"
+msgstr "Erreur 500 : erreur interne au serveur"
+
+#: mainsite/templates/500.html:9
+msgid ""
+"Error 500: internal server error ; either I messed up or you're not using "
+"the website correctly."
+msgstr ""
+"Erreur 500 : erreur interne au serveur ; soit il y a un problème dans le "
+"code, soit vous utilisez mal le site."
+
 #: mainsite/templates/base.html:12
 msgid "Personal website and devblog"
 msgstr "Site personnel et devblog"
@@ -65,19 +114,23 @@ msgstr "Paramètres utilisateur"
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: mainsite/templates/base.html:84
+#: mainsite/templates/base.html:86
+msgid "Account"
+msgstr "Compte"
+
+#: mainsite/templates/base.html:90
 #: mainsite/templates/registration/signup.html:6
 #: mainsite/templates/registration/signup.html:15
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: mainsite/templates/base.html:86 mainsite/templates/registration/login.html:6
+#: mainsite/templates/base.html:93 mainsite/templates/registration/login.html:6
 #: mainsite/templates/registration/login.html:14
 #: mainsite/templates/registration/password_reset_complete.html:11
 msgid "Login"
 msgstr "Connexion"
 
-#: mainsite/templates/base.html:100
+#: mainsite/templates/base.html:109
 msgid ""
 "<p>The <a href=\"https://github.com/Nyrio/personal-site\">code of this "
 "website</a> is libre and open source.</p>"
@@ -85,15 +138,19 @@ msgstr ""
 "<p>Le <a href=\"https://github.com/Nyrio/personal-site\">code de ce site</a> "
 "est libre et open source.</p>"
 
-#: mainsite/templates/blog.html:19 mainsite/templates/blog.html:29
+#: mainsite/templates/blog.html:19 mainsite/templates/blog.html:31
 msgid "Search"
 msgstr "Rechercher"
 
-#: mainsite/templates/blog.html:28
+#: mainsite/templates/blog.html:21
+msgid "RSS feed"
+msgstr "Flux RSS"
+
+#: mainsite/templates/blog.html:30
 msgid "Close"
 msgstr "Fermer"
 
-#: mainsite/templates/blog.html:40
+#: mainsite/templates/blog.html:42
 msgid "Blog post cover"
 msgstr "Image de couverture du post"
 
@@ -221,56 +278,19 @@ msgstr "(un email sera envoyé à votre adresse)"
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: mainsite/views.py:166
+#: mainsite/views.py:167
 msgid "Email confirmation for nyri0.fr"
 msgstr "Confirmation de l'email pour nyri0.fr"
 
-#: mainsite/views.py:167
+#: mainsite/views.py:168
 msgid "Activate html to see this email."
 msgstr "Activez le html pour voir le contenu de cet email"
 
-#: nyri0site/400.html:5
-msgid "Error 400: bad request"
-msgstr "Erreur 400 : mauvaise requête"
-
-#: nyri0site/400.html:9
-msgid "Error 400: your request is incorrect or corrupted."
-msgstr "Erreur 400 : la requête que vous envoyez est incorrecte ou corrompue."
-
-#: nyri0site/403.html:5
-msgid "Error 403: forbidden"
-msgstr "Erreur 403 : action interdite"
-
-#: nyri0site/403.html:9
-msgid ""
-"Error 403: you don't have the permissions for the action you're attempting."
-msgstr "Erreur 403 : vous n'avez pas la permission requise pour l'action que vous tentez."
-
-#: nyri0site/404.html:5
-msgid "Error 404: page not found"
-msgstr "Erreur 404 : page non trouvée"
-
-#: nyri0site/404.html:9
-msgid ""
-"Error 404: the page you are trying to access doesn't exist anymore, or has "
-"never existed."
-msgstr "Erreur 404 : la page à laquelle vous essayez d'accéder n'existe pas ou plus"
-
-#: nyri0site/500.html:5
-msgid "Error 500: internal server error"
-msgstr "Erreur 500 : erreur interne au serveur"
-
-#: nyri0site/500.html:9
-msgid ""
-"Error 500: internal server error ; either I messed up or you're not using "
-"the website correctly."
-msgstr "Erreur 500 : erreur interne au serveur ; soit il y a un problème dans le code, soit vous utilisez mal le site."
-
-#: nyri0site/settings.py:109
+#: nyri0site/settings.py:106
 msgid "English"
 msgstr "English"
 
-#: nyri0site/settings.py:110
+#: nyri0site/settings.py:107
 msgid "French"
 msgstr "Français"
 
