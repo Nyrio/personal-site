@@ -47,7 +47,7 @@ class BlogPost(models.Model):
       help_text=_("Cut in 21:9 for both on-site display and sharing"),
       variations={
           'gridview': {"width": 504, "height": 216, "crop": True},
-          'ogtag': {"width": 1260, "height": 540, "crop": True},
+          'ogtag': {"width": 1200, "height": 630, "crop": True},
       })
     date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,

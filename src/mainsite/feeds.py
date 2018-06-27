@@ -14,6 +14,9 @@ class PostsFeed(Feed):
     author_name = "Louis Sugy"
     author_link = reverse_lazy("about")
 
+    def get_object(self, request):
+        self.request = request
+
     def items(self):
         return BlogPost.objects.all().order_by("-date")[:10]
 
@@ -31,3 +34,6 @@ class PostsFeed(Feed):
 
     def item_link(self, item):
         return reverse_lazy('blogpost', kwargs={'pk': item.pk})
+
+    def item_enclosure_url(self, item):
+        return self.request.build_absolute_uri(item.cover_picture.url)
