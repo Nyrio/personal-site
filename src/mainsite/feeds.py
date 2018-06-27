@@ -37,3 +37,9 @@ class PostsFeed(Feed):
 
     def item_enclosure_url(self, item):
         return self.request.build_absolute_uri(item.cover_picture.url)
+
+    def item_enclosure_mime_type(self, item):
+        if item.cover_picture.url.endswith("png"):
+            return "image/png"
+        else:
+            return "image/jpeg"
