@@ -12,16 +12,18 @@ class CustomRssFeed(Rss201rev2Feed):
     """
     def rss_attributes(self):
         attributes = super().rss_attributes()
-        attributes.update({"xmlns:media": "http://search.yahoo.com/mrss"})
+        attributes.update({"xmlns:media": "http://search.yahoo.com/mrss/"})
         return attributes
 
     def add_item_elements(self, handler, item):
         super().add_item_elements(handler, item)
         cover_url = item["cover"]
-        for field_name in ["media:content", "atom:content"]:
-            handler.addQuickElement(field_name,
-              contents=None,
-              attrs={"url": cover_url})
+        handler.addQuickElement("media:content",
+          contents=None,
+          attrs={"url": cover_url})
+        # handler.addQuickElement("atom:content",
+        #   contents=None,
+        #   attrs={"url": cover_url})
         item["cover"] = None
 
 
