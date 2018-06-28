@@ -1,4 +1,5 @@
 from django.contrib.syndication.views import Feed
+from django.utils.feedgenerator import Rss201rev2Feed
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
@@ -6,13 +7,29 @@ from .models import BlogPost
 from .templatetags.misc_tags import parse_comment_markdown
 
 
+class CustomRssFeed(Rss201rev2Feed):
+    """ Custom class in an attempt to support cover pictures.
+    """
+    def add_item_elements(self, handler, item):
+        super().add_item_elements(handler, item)
+        print(item["cover"])
+        cover_url = item["cover"]
+        handler.addQuickElement("atom:content",
+          contents=None,
+          attrs={"url": cover_url})
+        item["cover"] = None
+
+
 class PostsFeed(Feed):
+    """ One unique feed class for two different feeds in the end/ EN and FR.
+    """
     title = _("Nyri0's Devblog")
     link = reverse_lazy("blog")
     feed_url = reverse_lazy("feed")
     description = _("Updates on blog entries - English version.")
     author_name = "Louis Sugy"
     author_link = reverse_lazy("about")
+    feed_type = CustomRssFeed
 
     def get_object(self, request):
         self.request = request
@@ -35,11 +52,7 @@ class PostsFeed(Feed):
     def item_link(self, item):
         return reverse_lazy('blogpost', kwargs={'pk': item.pk})
 
-    def item_enclosure_url(self, item):
-        return self.request.build_absolute_uri(item.cover_picture.url)
-
-    def item_enclosure_mime_type(self, item):
-        if item.cover_picture.url.endswith("png"):
-            return "image/png"
-        else:
-            return "image/jpeg"
+    def item_extra_kwargs(self, item):
+        return {
+            "cover": self.request.build_absolute_uri(item.cover_picture.url),
+        }
