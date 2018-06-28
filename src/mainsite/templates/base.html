@@ -4,15 +4,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Nyri0 - Louis Sugy{% endblock %}</title>
     <meta property="og:site_name" content="nyri0.fr">
+    <meta charset="utf-8" /> 
+    <meta name="author" content="Louis Sugy">
     {% block meta %}
         <meta property="og:title" content="Nyri0 - Louis Sugy">
+        <meta name="description" content="{% trans 'Personal website and devblog' %}.">
         <meta property="og:description" content="{% trans 'Personal website and devblog' %}.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://nyri0.fr">
     {% endblock %}
+    {% block addmeta %}{% endblock %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-custom.css' %}">

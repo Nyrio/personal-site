@@ -2,11 +2,14 @@
 {% load misc_tags %}
 {% load static %}
 
+{% load i18n %}
+
 {% block title %}Louis Sugy - CV{% endblock %}
 
 {% block meta %}
     <meta property="og:title" content="Louis Sugy - CV">
-    <meta property="og:description" content="Louis Sugy's online CV">
+    <meta name="description" content="{% trans "Louis Sugy's online CV: experience, education, skills, hobbies" %}">
+    <meta property="og:description" content="{% trans "Louis Sugy's online CV: experience, education, skills, hobbies" %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
 {% endblock %}

@@ -4,6 +4,8 @@
 
 {% block title %}{% trans "Error 500: internal server error" %}{% endblock %}
 
+{% block addmeta %}<meta name="robots" content="none" />{% endblock %}
+
 {% block body %}
     <div id="mainbox" class="container material-box">
         {% trans "Error 500: internal server error ; either I messed up or you're not using the website correctly." %}

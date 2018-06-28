@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:20+0200\n"
+"POT-Creation-Date: 2018-06-28 18:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: mainsite/feeds.py:10
+#: mainsite/feeds.py:33
 msgid "Nyri0's Devblog"
 msgstr "Devblog de Nyri0"
 
-#: mainsite/feeds.py:13
+#: mainsite/feeds.py:36
 msgid "Updates on blog entries - English version."
 msgstr "Les nouveaux articles du blog - version française"
 
@@ -59,7 +59,7 @@ msgstr "Vous pouvez utiliser la mise en forme markdown"
 msgid "Error 400: bad request"
 msgstr "Erreur 400 : mauvaise requête"
 
-#: mainsite/templates/400.html:9
+#: mainsite/templates/400.html:11
 msgid "Error 400: your request is incorrect or corrupted."
 msgstr "Erreur 400 : la requête que vous envoyez est incorrecte ou corrompue."
 
@@ -67,7 +67,7 @@ msgstr "Erreur 400 : la requête que vous envoyez est incorrecte ou corrompue."
 msgid "Error 403: forbidden"
 msgstr "Erreur 403 : action interdite"
 
-#: mainsite/templates/403.html:9
+#: mainsite/templates/403.html:11
 msgid ""
 "Error 403: you don't have the permissions for the action you're attempting."
 msgstr ""
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Error 404: page not found"
 msgstr "Erreur 404 : page non trouvée"
 
-#: mainsite/templates/404.html:9
+#: mainsite/templates/404.html:11
 msgid ""
 "Error 404: the page you are trying to access doesn't exist anymore, or has "
 "never existed."
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Error 500: internal server error"
 msgstr "Erreur 500 : erreur interne au serveur"
 
-#: mainsite/templates/500.html:9
+#: mainsite/templates/500.html:11
 msgid ""
 "Error 500: internal server error ; either I messed up or you're not using "
 "the website correctly."
@@ -97,40 +97,44 @@ msgstr ""
 "Erreur 500 : erreur interne au serveur ; soit il y a un problème dans le "
 "code, soit vous utilisez mal le site."
 
-#: mainsite/templates/base.html:12
+#: mainsite/templates/about.html:11 mainsite/templates/about.html:12
+msgid "Louis Sugy's online CV: experience, education, skills, hobbies"
+msgstr "Web-CV de Louis Sugy : expérience, formation, compétences et intérêts"
+
+#: mainsite/templates/base.html:13 mainsite/templates/base.html:14
 msgid "Personal website and devblog"
 msgstr "Site personnel et devblog"
 
-#: mainsite/templates/base.html:41
+#: mainsite/templates/base.html:44
 msgid "CV"
 msgstr "CV"
 
-#: mainsite/templates/base.html:75
+#: mainsite/templates/base.html:78
 #: mainsite/templates/registration/user_settings.html:6
 msgid "User settings"
 msgstr "Paramètres utilisateur"
 
-#: mainsite/templates/base.html:79
+#: mainsite/templates/base.html:82
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: mainsite/templates/base.html:86
+#: mainsite/templates/base.html:89
 msgid "Account"
 msgstr "Compte"
 
-#: mainsite/templates/base.html:90
+#: mainsite/templates/base.html:93
 #: mainsite/templates/registration/signup.html:6
-#: mainsite/templates/registration/signup.html:15
+#: mainsite/templates/registration/signup.html:17
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: mainsite/templates/base.html:93 mainsite/templates/registration/login.html:6
-#: mainsite/templates/registration/login.html:14
-#: mainsite/templates/registration/password_reset_complete.html:11
+#: mainsite/templates/base.html:96 mainsite/templates/registration/login.html:6
+#: mainsite/templates/registration/login.html:16
+#: mainsite/templates/registration/password_reset_complete.html:13
 msgid "Login"
 msgstr "Connexion"
 
-#: mainsite/templates/base.html:109
+#: mainsite/templates/base.html:112
 msgid ""
 "<p>The <a href=\"https://github.com/Nyrio/personal-site\">code of this "
 "website</a> is libre and open source.</p>"
@@ -138,27 +142,35 @@ msgstr ""
 "<p>Le <a href=\"https://github.com/Nyrio/personal-site\">code de ce site</a> "
 "est libre et open source.</p>"
 
-#: mainsite/templates/blog.html:19 mainsite/templates/blog.html:31
+#: mainsite/templates/blog.html:12 mainsite/templates/blog.html:13
+msgid ""
+"Nyri0's devblog: updates about my videogames and other projects, opinions, "
+"tutorials, articles."
+msgstr ""
+"Devblog de Nyri0 : nouvelles de mes jeux et autres projects, opinions, "
+"tutoriels, articles"
+
+#: mainsite/templates/blog.html:20 mainsite/templates/blog.html:32
 msgid "Search"
 msgstr "Rechercher"
 
-#: mainsite/templates/blog.html:21
+#: mainsite/templates/blog.html:22
 msgid "RSS feed"
 msgstr "Flux RSS"
 
-#: mainsite/templates/blog.html:30
+#: mainsite/templates/blog.html:31
 msgid "Close"
 msgstr "Fermer"
 
-#: mainsite/templates/blog.html:42
+#: mainsite/templates/blog.html:43
 msgid "Blog post cover"
 msgstr "Image de couverture du post"
 
-#: mainsite/templates/blogpost.html:36
+#: mainsite/templates/blogpost.html:37
 msgid "To bottom"
 msgstr "Bas de la page"
 
-#: mainsite/templates/blogpost.html:77
+#: mainsite/templates/blogpost.html:78
 msgid "Send"
 msgstr "Envoyer"
 
@@ -166,11 +178,11 @@ msgstr "Envoyer"
 msgid "Email activation"
 msgstr "Activation de l'adresse email"
 
-#: mainsite/templates/registration/activate.html:12
+#: mainsite/templates/registration/activate.html:14
 msgid "Email activation succeeded"
 msgstr "Adresse email activée avec succès"
 
-#: mainsite/templates/registration/activate.html:14
+#: mainsite/templates/registration/activate.html:16
 msgid "Email activation failed"
 msgstr "Échec de la validation de l'adresse email"
 
@@ -202,7 +214,7 @@ msgstr ""
 msgid "This is an auto-generated email. Please don't reply."
 msgstr "Ceci est un email généré automatiquement. Merci de ne pas répondre."
 
-#: mainsite/templates/registration/login.html:15
+#: mainsite/templates/registration/login.html:17
 msgid "Forgot Password?"
 msgstr "Mot de passe oublié ?"
 
@@ -210,24 +222,24 @@ msgstr "Mot de passe oublié ?"
 #: mainsite/templates/registration/password_reset_confirm.html:6
 #: mainsite/templates/registration/password_reset_done.html:5
 #: mainsite/templates/registration/password_reset_form.html:6
-#: mainsite/templates/registration/user_settings.html:14
+#: mainsite/templates/registration/user_settings.html:16
 msgid "Reset password"
 msgstr "Réinitialisation du mot de passe"
 
-#: mainsite/templates/registration/password_reset_complete.html:10
+#: mainsite/templates/registration/password_reset_complete.html:12
 msgid "Password reset successfully"
 msgstr "Mot de passe réinitialisé avec succès"
 
-#: mainsite/templates/registration/password_reset_confirm.html:15
-#: mainsite/templates/registration/password_reset_form.html:14
+#: mainsite/templates/registration/password_reset_confirm.html:17
+#: mainsite/templates/registration/password_reset_form.html:16
 msgid "Submit"
 msgstr "Valider"
 
-#: mainsite/templates/registration/password_reset_confirm.html:18
+#: mainsite/templates/registration/password_reset_confirm.html:20
 msgid "Password reset failed"
 msgstr "Échec du la réinitialisation de mot de passe"
 
-#: mainsite/templates/registration/password_reset_done.html:9
+#: mainsite/templates/registration/password_reset_done.html:11
 msgid "Email with password reset instructions has been sent."
 msgstr ""
 "Un email avec des instructions de réinitilisation du mot de passe a été "
@@ -262,7 +274,7 @@ msgstr ""
 msgid "Password reset for"
 msgstr "Réinitialisation du mot de passe pour"
 
-#: mainsite/templates/registration/signup.html:14
+#: mainsite/templates/registration/signup.html:16
 msgid ""
 "An email will be sent to your email address to confirm it. Verifying your "
 "email address allows you to post comments."
@@ -270,11 +282,11 @@ msgstr ""
 "Un email va être envoyé à votre adresse pour la confirmer. Vérifier votre "
 "adresse vous ouvre le droit de commenter les posts."
 
-#: mainsite/templates/registration/user_settings.html:14
+#: mainsite/templates/registration/user_settings.html:16
 msgid "(an email will be sent to your address)"
 msgstr "(un email sera envoyé à votre adresse)"
 
-#: mainsite/templates/registration/user_settings.html:15
+#: mainsite/templates/registration/user_settings.html:17
 msgid "Update"
 msgstr "Mettre à jour"
 

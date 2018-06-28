@@ -9,7 +9,8 @@
 
 {% block meta %}
     <meta property="og:title" content="Nyri0 - Blog">
-    <meta property="og:description" content="Nyri0's devblog: updates and opinions">
+    <meta name="description" content="{% trans "Nyri0's devblog: updates about my videogames and other projects, opinions, tutorials, articles." %}">
+    <meta property="og:description" content="{% trans "Nyri0's devblog: updates about my videogames and other projects, opinions, tutorials, articles." %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
 {% endblock %}
