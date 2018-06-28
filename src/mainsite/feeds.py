@@ -8,15 +8,20 @@ from .templatetags.misc_tags import parse_comment_markdown
 
 
 class CustomRssFeed(Rss201rev2Feed):
-    """ Custom class in an attempt to support cover pictures.
+    """ Custom class to support cover pictures.
     """
+    def rss_attributes(self):
+        attributes = super().rss_attributes()
+        attributes.update({"xmlns:media": "http://search.yahoo.com/mrss"})
+        return attributes
+
     def add_item_elements(self, handler, item):
         super().add_item_elements(handler, item)
-        print(item["cover"])
         cover_url = item["cover"]
-        handler.addQuickElement("atom:content",
-          contents=None,
-          attrs={"url": cover_url})
+        for field_name in ["media:content", "atom:content"]:
+            handler.addQuickElement(field_name,
+              contents=None,
+              attrs={"url": cover_url})
         item["cover"] = None
 
 
