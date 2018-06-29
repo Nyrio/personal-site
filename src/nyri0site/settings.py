@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'simple_email_confirmation',
     'stdimage',
     'bootstrapform',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,7 @@ TEMPLATES = [
     },
 ]
 
+SITE_ID = 1
 WSGI_APPLICATION = 'nyri0site.wsgi.application'
 
 

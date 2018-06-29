@@ -6,13 +6,24 @@ from django.views.static import serve
 from django.contrib.auth import views as auth_views
 from django.utils.translation import ugettext_lazy as url_lazy
 from django.contrib.auth.decorators import login_required
+from django.contrib.sitemaps.views import sitemap
 
 from mainsite import views
 from mainsite.feeds import PostsFeed
+from mainsite.sitemaps import PostsMap, MiscViewsMap
+
+
+sitemaps = {
+    'sitemaps': PostsMap("fr"),
+    'postsmapen': PostsMap("en"),
+    'miscviews': MiscViewsMap,
+}
 
 urlpatterns = [
     path('', views.index),
     path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap')
 ]
 
 urlpatterns += [
