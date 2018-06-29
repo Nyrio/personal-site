@@ -11,9 +11,3 @@ Disallow: /en/accounts/
 Disallow: /fr/accounts/
 Disallow: /*.js$
 Disallow: /*.css$
-
-
-# Google AdSense
-User-agent: Mediapartners-Google*
-Disallow:
-Allow: /*
