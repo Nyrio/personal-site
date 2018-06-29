@@ -3,8 +3,8 @@ from django.conf import settings
 from django.urls import path, re_path, reverse_lazy
 from django.conf.urls.i18n import i18n_patterns
 from django.views.static import serve
-from django.contrib.auth import views as auth_views
 from django.utils.translation import ugettext_lazy as url_lazy
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.sitemaps.views import sitemap
 
@@ -23,7 +23,8 @@ urlpatterns = [
     path('', views.index),
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-         name='django.contrib.sitemaps.views.sitemap')
+         name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt', views.robots_view, {}),
 ]
 
 urlpatterns += [

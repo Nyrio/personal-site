@@ -1,7 +1,6 @@
-from django.shortcuts import render, render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from django.template.loader import render_to_string
-from django.http import HttpResponseRedirect, HttpResponseForbidden
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidden
 from django.views import generic
 from django.urls import reverse, reverse_lazy
 from django.core.mail import send_mail
@@ -11,10 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
 
 from .forms import CustomUserCreationForm, UserSettingsForm, BlogSearchForm, CommentForm
-from .models import User, BlogPost  # , BlogComment
-
-
-import pdb
+from .models import User, BlogPost
 
 
 def index(request):
@@ -30,6 +26,13 @@ def about(request):
     mdname = "CV_%s.md" % get_language()
     cvmd = render_to_string(mdname)
     return render(request, "about.html", context={"cvmd": cvmd})
+
+
+def robots_view(request):
+    """ Serving the robots.txt from corresponding template.
+    """
+    robots_txt = render_to_string("robots.txt")
+    return HttpResponse(robots_txt, content_type='text/plain')
 
 
 class BlogView(generic.ListView):

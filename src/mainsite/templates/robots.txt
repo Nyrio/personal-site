@@ -1,0 +1,19 @@
+Sitemap: https://nyri0.fr/sitemap.xml
+
+User-agent: *
+
+Disallow: /media/profilepics/
+Disallow: /en/signup/
+Disallow: /fr/signup/
+Disallow: /en/activate/
+Disallow: /fr/activate/
+Disallow: /en/accounts/
+Disallow: /fr/accounts/
+Disallow: /*.js$
+Disallow: /*.css$
+
+
+# Google AdSense
+User-agent: Mediapartners-Google*
+Disallow:
+Allow: /*
