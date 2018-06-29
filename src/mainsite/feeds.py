@@ -10,6 +10,10 @@ from .templatetags.misc_tags import parse_comment_markdown
 class CustomRssFeed(Rss201rev2Feed):
     """ Custom class to support cover pictures.
     """
+    def __init__(self, title, link, description, **kwargs):
+        kwargs["language"] = get_language()
+        super().__init__(title, link, description, **kwargs)
+
     def rss_attributes(self):
         attributes = super().rss_attributes()
         attributes.update({"xmlns:media": "http://search.yahoo.com/mrss/"})
