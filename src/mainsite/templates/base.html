@@ -68,7 +68,7 @@
                                 <a class="dropdown-toggle" style="position: relative;" data-toggle="dropdown" href="#">
                                     {% if request.user.avatar %}
                                         <span class="hidden-xs">
-                                            <img class="img-circle profile-thumbnail" src="{{ request.user.avatar.thumbnail.url }}" alt="profile picture">
+                                            <img class="img-circle profile-thumbnail" src="{{ request.user.avatar.thumbnail.url }}" alt="{% trans 'profile picture' %}">
                                             <span style="margin-right: 80px;"></span>
                                         </span>
                                         <span class="hidden-sm hidden-md hidden-lg">

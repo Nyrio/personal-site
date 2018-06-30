@@ -49,6 +49,9 @@
     {% block body %}
         {% get_current_language as language %}
         <div id="mainbox" class="container material-box">
+            <div class="grid-image-wrapper" style="margin-bottom: 15px;">
+                <img src="{{ blogpost.cover_picture.article.url }}" alt="{% trans 'Blog post cover' %}" />
+            </div>
             {% if language == 'fr' %}
                 {{ blogpost.text_fr|safe|parse_post_markdown }}
             {% else %}
