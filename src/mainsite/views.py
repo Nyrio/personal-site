@@ -126,7 +126,7 @@ class BlogPostView(generic.DetailView, generic.edit.FormMixin):
         for otherpost in BlogPost.objects.values('pk', 'date',
                                                  'title_%s' % get_language()):
             post_date = otherpost["date"]
-            date_str = "%s %d" % (months[post_date.month], post_date.year)
+            date_str = "%s %d" % (months[post_date.month - 1], post_date.year)
             if date_str not in months_posts:
                 months_posts[date_str] = []
             months_posts[date_str].append({
