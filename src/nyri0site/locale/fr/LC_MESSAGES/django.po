@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-28 18:17+0200\n"
+"POT-Creation-Date: 2018-06-30 20:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: mainsite/feeds.py:33
+#: mainsite/feeds.py:37
 msgid "Nyri0's Devblog"
 msgstr "Devblog de Nyri0"
 
-#: mainsite/feeds.py:36
+#: mainsite/feeds.py:40
 msgid "Updates on blog entries - English version."
 msgstr "Les nouveaux articles du blog - version française"
 
@@ -47,11 +47,11 @@ msgstr "Merci d'utiliser une image carrée pour éviter le découpage"
 msgid "Cut in 21:9 for both on-site display and sharing"
 msgstr "Coupée en 21:9 pour affichage sur site et partage"
 
-#: mainsite/models.py:69
+#: mainsite/models.py:70
 msgid "Comment"
 msgstr "Commentaire"
 
-#: mainsite/models.py:70
+#: mainsite/models.py:71
 msgid "You can use markdown formatting"
 msgstr "Vous pouvez utiliser la mise en forme markdown"
 
@@ -101,40 +101,45 @@ msgstr ""
 msgid "Louis Sugy's online CV: experience, education, skills, hobbies"
 msgstr "Web-CV de Louis Sugy : expérience, formation, compétences et intérêts"
 
-#: mainsite/templates/base.html:13 mainsite/templates/base.html:14
+#: mainsite/templates/base.html:14 mainsite/templates/base.html:15
 msgid "Personal website and devblog"
 msgstr "Site personnel et devblog"
 
-#: mainsite/templates/base.html:44
+#: mainsite/templates/base.html:49
 msgid "CV"
 msgstr "CV"
 
-#: mainsite/templates/base.html:78
+#: mainsite/templates/base.html:71
+msgid "profile picture"
+msgstr "image de profil"
+
+#: mainsite/templates/base.html:83
 #: mainsite/templates/registration/user_settings.html:6
 msgid "User settings"
 msgstr "Paramètres utilisateur"
 
-#: mainsite/templates/base.html:82
+#: mainsite/templates/base.html:87
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: mainsite/templates/base.html:89
+#: mainsite/templates/base.html:94
 msgid "Account"
 msgstr "Compte"
 
-#: mainsite/templates/base.html:93
+#: mainsite/templates/base.html:98
 #: mainsite/templates/registration/signup.html:6
 #: mainsite/templates/registration/signup.html:17
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: mainsite/templates/base.html:96 mainsite/templates/registration/login.html:6
+#: mainsite/templates/base.html:101
+#: mainsite/templates/registration/login.html:6
 #: mainsite/templates/registration/login.html:16
 #: mainsite/templates/registration/password_reset_complete.html:13
 msgid "Login"
 msgstr "Connexion"
 
-#: mainsite/templates/base.html:112
+#: mainsite/templates/base.html:117
 msgid ""
 "<p>The <a href=\"https://github.com/Nyrio/personal-site\">code of this "
 "website</a> is libre and open source.</p>"
@@ -162,17 +167,21 @@ msgstr "Flux RSS"
 msgid "Close"
 msgstr "Fermer"
 
-#: mainsite/templates/blog.html:43
+#: mainsite/templates/blog.html:43 mainsite/templates/blogpost.html:56
 msgid "Blog post cover"
 msgstr "Image de couverture du post"
 
-#: mainsite/templates/blogpost.html:37
+#: mainsite/templates/blogpost.html:45
 msgid "To bottom"
 msgstr "Bas de la page"
 
-#: mainsite/templates/blogpost.html:78
+#: mainsite/templates/blogpost.html:90
 msgid "Send"
 msgstr "Envoyer"
+
+#: mainsite/templates/blogpost.html:97
+msgid "All articles"
+msgstr "Tous les articles"
 
 #: mainsite/templates/registration/activate.html:6
 msgid "Email activation"
@@ -290,19 +299,19 @@ msgstr "(un email sera envoyé à votre adresse)"
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: mainsite/views.py:167
+#: mainsite/views.py:193
 msgid "Email confirmation for nyri0.fr"
 msgstr "Confirmation de l'email pour nyri0.fr"
 
-#: mainsite/views.py:168
+#: mainsite/views.py:194
 msgid "Activate html to see this email."
 msgstr "Activez le html pour voir le contenu de cet email"
 
-#: nyri0site/settings.py:106
+#: nyri0site/settings.py:109
 msgid "English"
 msgstr "English"
 
-#: nyri0site/settings.py:107
+#: nyri0site/settings.py:110
 msgid "French"
 msgstr "Français"
 

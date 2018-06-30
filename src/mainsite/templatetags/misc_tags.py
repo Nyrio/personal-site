@@ -1,5 +1,6 @@
 from django.template import Library
 import markdown as markdown
+import re
 
 register = Library()
 
@@ -59,3 +60,9 @@ def url_replace(request, field, value):
 @register.simple_tag
 def absolute_uri(request, relative_uri):
     return request.build_absolute_uri(relative_uri)
+
+
+@register.simple_tag
+def hard_sanitize(text):
+    discrimination_regex = re.compile('[\W_]+', re.UNICODE)
+    return discrimination_regex.sub('', text)

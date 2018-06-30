@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login
 from simple_email_confirmation.models import EmailAddress
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
+from django.db.models import F
 
 from .forms import CustomUserCreationForm, UserSettingsForm, BlogSearchForm, CommentForm
 from .models import User, BlogPost
@@ -98,23 +99,47 @@ class BlogPostView(generic.DetailView, generic.edit.FormMixin):
     form_class = CommentForm
 
     def get_context_data(self, **kwargs):
-        """ Add some info in context (e.g comments and form to post)
+        """ Add some info in context:
+            comments, form to post comment, other articles.
         """
 
         context = super().get_context_data(**kwargs)
         blogpost = context["object"]
+
+        # Get comments related to this blog post
         context["comments"] = blogpost.comments.all()
 
+        # Get the form to comment
         context["form"] = CommentForm(initial={"user": self.request.user,
                                                "blogpost": self.get_object()})
+
+        # Get all blog post for the side bar on large screens
+        if get_language() == "fr":
+            months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                      "Juillet", "Août", "Septembre", "Octobre", "Novembre",
+                      "Décembre"]
+        else:
+            months = ["January", "February", "March", "April", "May", "June",
+                      "July", "August", "September", "October", "November",
+                      "December"]
+        months_posts = {}
+        for otherpost in BlogPost.objects.values('pk', 'date',
+                                                 'title_%s' % get_language()):
+            post_date = otherpost["date"]
+            date_str = "%s %d" % (months[post_date.month], post_date.year)
+            if date_str not in months_posts:
+                months_posts[date_str] = []
+            months_posts[date_str].append({
+                "title": otherpost["title_%s" % get_language()],
+                "url": reverse_lazy("blogpost", kwargs={"pk": otherpost["pk"]})})
+
+        context["otherposts"] = months_posts
 
         return context
 
     def post(self, request, *args, **kwargs):
         """ Handle comments on POST requests.
         """
-        print("hellooooww")
-
         if not request.user.is_authenticated or not request.user.is_confirmed:
             return HttpResponseForbidden()
 
@@ -124,7 +149,6 @@ class BlogPostView(generic.DetailView, generic.edit.FormMixin):
         # pdb.set_trace()
 
         if form.is_valid():
-            print("heyyyy")
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
@@ -132,12 +156,11 @@ class BlogPostView(generic.DetailView, generic.edit.FormMixin):
     def form_valid(self, form):
         """ Post the comment if the form is valid.
         """
-        print(form.cleaned_data)
         if form.cleaned_data["user"] != self.request.user:
             return self.form_invalid(form)
         if form.cleaned_data["blogpost"] != self.get_object():
             return self.form_invalid(form)
-        print("coucou")
+
         form.save()
         return super(BlogPostView, self).form_valid(form)
 

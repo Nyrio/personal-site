@@ -48,48 +48,65 @@
 
     {% block body %}
         {% get_current_language as language %}
-        <div id="mainbox" class="container material-box">
-            <div class="grid-image-wrapper" style="margin-bottom: 15px;">
-                <img src="{{ blogpost.cover_picture.article.url }}" alt="{% trans 'Blog post cover' %}" />
-            </div>
-            {% if language == 'fr' %}
-                {{ blogpost.text_fr|safe|parse_post_markdown }}
-            {% else %}
-                {{ blogpost.text_en|safe|parse_post_markdown }}
-            {% endif %}
-        </div>
-        <div id="comments">
-            {% for comment in comments %}
-                <div id="com{{ comment.pk }}" class="container material-box">
-                    <div class="row">
-                        <div class="col-xs-3 col-sm-2">
-                            {% if comment.user.avatar %}
-                                <img class="img img-responsive img-rounded" src="{{ comment.user.avatar.comment.url }}">
-                            {% else %}
-                                <svg class="img img-responsive img-rounded" width="256" height="256" data-jdenticon-value="{{ comment.user.username }}"></svg>
-                            {% endif %}
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-8 nopadding-lr">
+                    <div id="mainbox" class="col-xs-12 material-box">
+                        <div class="grid-image-wrapper" style="margin-bottom: 15px;">
+                            <img src="{{ blogpost.cover_picture.article.url }}" alt="{% trans 'Blog post cover' %}" />
                         </div>
-                        <div class="col-xs-9 col-sm-10">
-                            <strong class="comment-pseudo">
-                                <a href="#com{{ comment.pk }}"><span class="glyphicon glyphicon-link" style="margin-right: 0.25em;"></span></a>
-                                {{ comment.user.username }}
-                            </strong>
-                            <span style="margin-right: 0.5em;"></span><i>({{ comment.date|date:'Y-m-d H:i' }})</i>
-                            {{ comment.text|safe|parse_comment_markdown }}
+                        {% if language == 'fr' %}
+                            {{ blogpost.text_fr|safe|parse_post_markdown }}
+                        {% else %}
+                            {{ blogpost.text_en|safe|parse_post_markdown }}
+                        {% endif %}
+                    </div>
+                    {% for comment in comments %}
+                        <div id="com{{ comment.pk }}" class="col-xs-12 material-box">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-2">
+                                    {% if comment.user.avatar %}
+                                        <img class="img img-responsive img-rounded" src="{{ comment.user.avatar.comment.url }}">
+                                    {% else %}
+                                        <svg class="img img-responsive img-rounded" width="256" height="256" data-jdenticon-value="{{ comment.user.username }}"></svg>
+                                    {% endif %}
+                                </div>
+                                <div class="col-xs-9 col-sm-10">
+                                    <strong class="comment-pseudo">
+                                        <a href="#com{{ comment.pk }}"><span class="glyphicon glyphicon-link" style="margin-right: 0.25em;"></span></a>
+                                        {{ comment.user.username }}
+                                    </strong>
+                                    <span style="margin-right: 0.5em;"></span><i>({{ comment.date|date:'Y-m-d H:i' }})</i>
+                                    {{ comment.text|safe|parse_comment_markdown }}
+                                </div>
+                            </div>
                         </div>
+                    {% endfor %}
+                    {% if request.user.is_confirmed %}
+                        <div id="commentForm" class="col-xs-12 material-box">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                {{ form|bootstrap }}
+                                <button class="btn btn-primary">{% trans "Send" %}</button>
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="hidden-xs hidden-sm col-md-4">
+                    <div class="material-box side-column">
+                        <h3>{% trans "All articles" %}</h3>
+                        {% for date_str, monthposts in otherposts.items %}
+                            <a class="sidebar-month" data-toggle="collapse" href="#{% hard_sanitize date_str %}">{{ date_str }} <span class="caret"></span></a>
+                            <div id="{% hard_sanitize date_str %}" class="collapse">
+                            {% for post in monthposts %}
+                                <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+                            {% endfor %}
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
-            {% endfor %}
-        </div>
-        {% if request.user.is_confirmed %}
-            <div id="commentForm" class="container material-box">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    {{ form|bootstrap }}
-                    <button class="btn btn-primary">{% trans "Send" %}</button>
-                </form>
             </div>
-        {% endif %}
+        </div>
     {% endblock %}
 
 {% endwith %}
