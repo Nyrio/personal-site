@@ -48,6 +48,7 @@ class BlogPost(models.Model):
       variations={
           'gridview': {"width": 504, "height": 216, "crop": True},
           'ogtag': {"width": 1200, "height": 630, "crop": True},
+          'article': {"width": 1792, "height": 768, "crop": True},
       })
     date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,

@@ -30,7 +30,7 @@ nav, .navbar {
 .material-box {
     color: #505052;
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -65,6 +65,8 @@ div.griditem {
     overflow: hidden;
     padding-bottom: 42.8571429%;
     position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .grid-image-wrapper > img {
     position: absolute;
@@ -83,6 +85,7 @@ div.griditem {
     width: 100%;
     height: 30%;    
     position: absolute;
+    border-radius: 5px;
     left: 0;
     top: 70%;
     background: -webkit-linear-gradient(transparent 50px, white);
