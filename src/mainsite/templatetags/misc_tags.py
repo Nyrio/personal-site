@@ -12,7 +12,7 @@ def common_markdown_parse(extensions, text):
 
     replacements = {
         "<table": "<table class='table table-responsive table-bordered'",
-        "<img": "<img class='img-responsive'",
+        "<img": "<img class='img-responsive img-center'",
         "[HTML_REMOVED]": "",
         "%newline%": "<br>",
     }
