@@ -176,7 +176,8 @@ code {
     font-size: 16px;
 }
 
-.material-box p {
+.material-box p,
+.material-box li {
     text-align: justify;
     text-justify: inter-word;
 }
