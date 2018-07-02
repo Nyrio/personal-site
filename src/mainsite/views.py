@@ -126,14 +126,20 @@ class BlogPostView(generic.DetailView, generic.edit.FormMixin):
         for otherpost in BlogPost.objects.values('pk', 'date',
                                                  'title_%s' % get_language()):
             post_date = otherpost["date"]
+            date_code = "%d%02d" % (post_date.year, post_date.month)
             date_str = "%s %d" % (months[post_date.month - 1], post_date.year)
-            if date_str not in months_posts:
-                months_posts[date_str] = []
-            months_posts[date_str].append({
+            if date_code not in months_posts:
+                months_posts[date_code] = (date_str, [])
+            months_posts[date_code][1].append({
                 "title": otherpost["title_%s" % get_language()],
                 "url": reverse_lazy("blogpost", kwargs={"pk": otherpost["pk"]})})
 
-        context["otherposts"] = months_posts
+        otherposts = []
+        for date_code in reversed(sorted(months_posts)):
+            otherposts.append((months_posts[date_code][0],
+                               months_posts[date_code][1]))
+
+        context["otherposts"] = otherposts
 
         return context
 

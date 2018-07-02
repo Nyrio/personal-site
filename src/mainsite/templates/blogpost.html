@@ -95,7 +95,7 @@
                 <div class="hidden-xs hidden-sm col-md-4">
                     <div class="material-box side-column">
                         <h3>{% trans "All articles" %}</h3>
-                        {% for date_str, monthposts in otherposts.items %}
+                        {% for date_str, monthposts in otherposts %}
                             <a class="sidebar-month" data-toggle="collapse" href="#{% hard_sanitize date_str %}">{{ date_str }} <span class="caret"></span></a>
                             <div id="{% hard_sanitize date_str %}" class="collapse">
                             {% for post in monthposts %}
