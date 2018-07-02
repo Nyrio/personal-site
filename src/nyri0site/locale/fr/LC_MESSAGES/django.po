@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-30 20:30+0200\n"
+"POT-Creation-Date: 2018-07-02 19:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,9 +105,29 @@ msgstr "Web-CV de Louis Sugy : expérience, formation, compétences et intérêt
 msgid "Personal website and devblog"
 msgstr "Site personnel et devblog"
 
+#: mainsite/templates/base.html:42
+msgid "Go to homepage"
+msgstr "Aller à la page d'accueil"
+
+#: mainsite/templates/base.html:49
+msgid "Learn more about me"
+msgstr "En apprendre plus sur moi"
+
 #: mainsite/templates/base.html:49
 msgid "CV"
 msgstr "CV"
+
+#: mainsite/templates/base.html:51
+msgid "Updates and articles"
+msgstr "Nouvelles et articles"
+
+#: mainsite/templates/base.html:52 mainsite/templates/base.html:54
+msgid "My GitHub profile"
+msgstr "Mon profil GitHub"
+
+#: mainsite/templates/base.html:53 mainsite/templates/base.html:55
+msgid "My LinkedIn profile"
+msgstr "Mon profil LinkedIn"
 
 #: mainsite/templates/base.html:71
 msgid "profile picture"
@@ -175,11 +195,11 @@ msgstr "Image de couverture du post"
 msgid "To bottom"
 msgstr "Bas de la page"
 
-#: mainsite/templates/blogpost.html:90
+#: mainsite/templates/blogpost.html:95
 msgid "Send"
 msgstr "Envoyer"
 
-#: mainsite/templates/blogpost.html:97
+#: mainsite/templates/blogpost.html:102
 msgid "All articles"
 msgstr "Tous les articles"
 
@@ -299,11 +319,11 @@ msgstr "(un email sera envoyé à votre adresse)"
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: mainsite/views.py:193
+#: mainsite/views.py:199
 msgid "Email confirmation for nyri0.fr"
 msgstr "Confirmation de l'email pour nyri0.fr"
 
-#: mainsite/views.py:194
+#: mainsite/views.py:200
 msgid "Activate html to see this email."
 msgstr "Activez le html pour voir le contenu de cet email"
 
