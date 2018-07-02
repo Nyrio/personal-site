@@ -39,20 +39,20 @@
                         <span class="icon-bar"></span>
                     </button>
                     {% url "index" as index_url %}
-                    <a class="navbar-brand" href="{{ index_url }}">
+                    <a class="navbar-brand" href="{{ index_url }}" title="{% trans 'Go to homepage' %}">
                         <strong class="monospace">nyri0</strong>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         {% url "about" as about_url %}
-                        <li {% if request.path == about_url %}class="active"{% endif %}><a href="{{ about_url }}"><span class="glyphicon glyphicon-education" style="margin-right: 0.5em;"></span> {% trans "CV" %}</a></li>
+                        <li {% if request.path == about_url %}class="active"{% endif %}><a href="{{ about_url }}" title="{% trans 'Learn more about me' %}"><span class="glyphicon glyphicon-education" style="margin-right: 0.5em;"></span> {% trans "CV" %}</a></li>
                         {% url "blog" as blog_url %}
-                        <li {% if request.path == blog_url %}class="active"{% endif %}><a href="{{ blog_url }}"><span class="glyphicon glyphicon-comment" style="margin-right: 0.5em;"></span> Devblog</a></li>
-                        <li class="hidden-xs"><a href="https://github.com/Nyrio/"><img class="bar-lone-icon" src="{% static 'icons/github.svg' %}" alt="github"></a></li>
-                        <li class="hidden-xs"><a href="https://www.linkedin.com/in/louis-sugy/"><img class="bar-lone-icon" src="{% static 'icons/linkedin.svg' %}" alt="linkedin"></a></li>
-                        <li class="visible-xs"><a href="https://github.com/Nyrio/"><img class="bar-lone-icon-xs" src="{% static 'icons/github.svg' %}" alt="github"> GitHub</a></li>
-                        <li class="visible-xs"><a href="https://www.linkedin.com/in/louis-sugy/"><img class="bar-lone-icon-xs" src="{% static 'icons/linkedin.svg' %}" alt="linkedin"> LinkedIn</a></li>
+                        <li {% if request.path == blog_url %}class="active"{% endif %}><a href="{{ blog_url }}" title="{% trans 'Updates and articles' %}"><span class="glyphicon glyphicon-comment" style="margin-right: 0.5em;"></span> Devblog</a></li>
+                        <li class="hidden-xs"><a href="https://github.com/Nyrio/" title="{% trans 'My GitHub profile' %}"><img class="bar-lone-icon" src="{% static 'icons/github.svg' %}" alt="github"></a></li>
+                        <li class="hidden-xs"><a href="https://www.linkedin.com/in/louis-sugy/" title="{% trans 'My LinkedIn profile' %}"><img class="bar-lone-icon" src="{% static 'icons/linkedin.svg' %}" alt="linkedin"></a></li>
+                        <li class="visible-xs"><a href="https://github.com/Nyrio/" title="{% trans 'My GitHub profile' %}"><img class="bar-lone-icon-xs" src="{% static 'icons/github.svg' %}" alt="github"> GitHub</a></li>
+                        <li class="visible-xs"><a href="https://www.linkedin.com/in/louis-sugy/" title="{% trans 'My LinkedIn profile' %}"><img class="bar-lone-icon-xs" src="{% static 'icons/linkedin.svg' %}" alt="linkedin"> LinkedIn</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         {% block addnavright %}{% endblock %}

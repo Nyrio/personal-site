@@ -42,15 +42,16 @@ nav, .navbar {
     -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
     box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
 }
+.clickable-box {
+    -webkit-transition: -webkit-transform 250ms, -webkit-box-shadow 250ms;
+    transition: transform 250ms, box-shadow 250ms;
+}
 .clickable-box:hover {
     cursor: pointer;
     -webkit-box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
     box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
     -webkit-transform:translateY(-5px)!important;
     transform:translateY(-5px)!important;
-
-    -webkit-transition: -webkit-transform 250ms, -webkit-box-shadow 250ms;
-    transition: transform 250ms, box-shadow 250ms;
 }
 
 .row.grid-wrapper {

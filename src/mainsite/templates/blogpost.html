@@ -55,6 +55,11 @@
                         <div class="grid-image-wrapper" style="margin-bottom: 15px;">
                             <img src="{{ blogpost.cover_picture.article.url }}" alt="{% trans 'Blog post cover' %}" />
                         </div>
+                        <p>
+                            <i>{{ blogpost.date|date:'Y-m-d H:i' }}</i>
+                            <span style="margin-right: 0.5em;"></span>- 
+                            <span class="glyphicon {{ blogpost.category.glyphicon_name }}" style="margin-left: 0.5em; margin-right: 0.2em;"></span> {% if language == 'fr' %}{{ blogpost.category.name_fr }}{% else %}{{ blogpost.category.name_en }}{% endif %}
+                        </p>
                         {% if language == 'fr' %}
                             {{ blogpost.text_fr|safe|parse_post_markdown }}
                         {% else %}
