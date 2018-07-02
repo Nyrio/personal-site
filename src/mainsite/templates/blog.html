@@ -16,10 +16,10 @@
 {% endblock %}
 
 {% block addnavright %}
-    <li class="hidden-xs"><a data-toggle="collapse" href="#searchbox"><span class="glyphicon glyphicon-search"></span></a></li>
-    <li class="visible-xs"><a data-toggle="collapse" href="#searchbox"><span class="glyphicon glyphicon-search" style="margin-right: 0.5em;"></span> {% trans "Search" %} </a></li>
-    <li class="hidden-xs"><a href="{% url 'feed' %}"><img class="bar-lone-icon" src="{% static 'icons/rss.svg' %}" alt="RSS"></a></li>
-    <li class="visible-xs"><a href="{% url 'feed' %}"><img class="bar-lone-icon-xs" src="{% static 'icons/rss.svg' %}" alt="RSS"> {% trans "RSS feed" %}</a></li>
+    <li class="hidden-xs"><a data-toggle="collapse" href="#searchbox" title="{% trans 'Search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
+    <li class="visible-xs"><a data-toggle="collapse" href="#searchbox" title="{% trans 'Search' %}><span class="glyphicon glyphicon-search" style="margin-right: 0.5em;"></span> {% trans "Search" %} </a></li>
+    <li class="hidden-xs"><a href="{% url 'feed' %}" title="{% trans 'RSS feed' %}"><img class="bar-lone-icon" src="{% static 'icons/rss.svg' %}" alt="RSS"></a></li>
+    <li class="visible-xs"><a href="{% url 'feed' %}" title="{% trans 'RSS feed' %}"><img class="bar-lone-icon-xs" src="{% static 'icons/rss.svg' %}" alt="RSS"> {% trans "RSS feed" %}</a></li>
 {% endblock %}
 
 {% block body %}
