@@ -54,7 +54,7 @@
 | 2013/16 | **Administrateur**, *[Planète Casio](https://www.planet-casio.com)* %newline% Administration du site, gestion de communauté, organisation de concours |
 
 
-### Projects
+### Projets
 
 | Années | Description |
 | ------ | ------------- |
