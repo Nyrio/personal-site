@@ -63,7 +63,11 @@ class PostsFeed(Feed):
     def item_link(self, item):
         return reverse_lazy('blogpost', kwargs={'pk': item.pk})
 
+    def item_pubdate(self, item):
+        return item.date
+
     def item_extra_kwargs(self, item):
         return {
-            "cover": self.request.build_absolute_uri(item.cover_picture.url),
+            "cover": self.request.build_absolute_uri(
+                item.cover_picture.ogtag.url),
         }
