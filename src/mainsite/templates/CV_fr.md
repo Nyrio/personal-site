@@ -61,7 +61,7 @@
 | 2011/17 | **Jeux vidéos** %newline% Game jams et projets plus longs. Art et programmation |
 | 2016 | **Rastériseur** %newline% Sur CPU, pour comprendre comment cela fonctionne |
 | 2014/15 | **Applis smartphone** %newline% Plus de 120 000 téléchargements |
-| 2011/14 | **Jeux et utilitaires pour calculatrices** %newline% Adaptation et jeux originaux, utilitaires divers |
+| 2010/13 | **Jeux et utilitaires pour calculatrices** %newline% Adaptation et jeux originaux, utilitaires divers |
 
 Voir plus de projets sur [GitHub](https://github.com/Nyrio/).
 
@@ -70,7 +70,7 @@ Voir plus de projets sur [GitHub](https://github.com/Nyrio/).
 
  - 2017: **Shaker Coding Battle** - 9ème /3090
  - 2014/17: **Prologin** - 4 fois finaliste, 22ème in 2017
- - 2016/17: **Battle Dev** - 10ème /2030 en Nov. 2017, 25th /2306 en Mars 2017, 30ème /2490 en Nov. 2017
+ - 2016/17: **Battle Dev** - 10ème /2030 en Nov. 2016, 25th /2306 en Mars 2017, 30ème /2490 en Nov. 2017
 
 ### Intérêts
 

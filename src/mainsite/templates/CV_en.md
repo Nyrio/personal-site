@@ -61,7 +61,7 @@
 | 2011/17 | **Video games** %newline% Game jams and longer projects. Both art and programming |
 | 2016 | **Rasterizer** %newline% On CPU, to understand how it works |
 | 2014/15 | **Smartphone apps** %newline% Downloaded +120 000 times |
-| 2011/14 | **Games and utilities for calculators** %newline% Adaptations and original games, misc. utilities |
+| 2010/13 | **Games and utilities for calculators** %newline% Adaptations and original games, misc. utilities |
 
 See some more projects on [GitHub](https://github.com/Nyrio/).
 
@@ -70,7 +70,7 @@ See some more projects on [GitHub](https://github.com/Nyrio/).
 
  - 2017: **Shaker Coding Battle** - 9th /3090
  - 2014/17: **Prologin** - 4-time finalist, 22nd in 2017
- - 2016/17: **Battle Dev** - 10th /2030 in Nov. 2017, 25th /2306 in Mar. 2017, 30th /2490 in Nov. 2017
+ - 2016/17: **Battle Dev** - 10th /2030 in Nov. 2016, 25th /2306 in Mar. 2017, 30th /2490 in Nov. 2017
 
 ### Hobbies
 
