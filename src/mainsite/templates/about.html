@@ -15,7 +15,23 @@
 {% endblock %}
 
 {% block body %}
-    <div id="mainbox" class="container material-box">
-        {{ cvmd|parse_post_markdown }}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 nopadding-lr">
+                <div id="mainbox" class="col-xs-12 material-box">
+                    {{ cvmd|parse_post_markdown }}
+                </div>
+            </div>
+            <div>
+                <div class="hidden-xs hidden-sm col-md-4">
+                    <div class="material-box side-column">
+                        <img src="/media/me.png" class="img-responsive img-center img-rounded">
+                        <br>
+                        <p><b>Contact:</b> <i>contact</i> arobase <i>nyri0.fr</i></p>
+                        <p><a href="https://www.linkedin.com/in/louis-sugy/">LinkedIn</a> - <a href="https://github.com/Nyrio/">GitHub</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
