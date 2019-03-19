@@ -22,7 +22,7 @@
 
     {% block meta %}
         {% get_current_language as language %}
-        <meta name="twitter:card" content="summary">        
+        <meta name="twitter:card" content="summary">
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ request.build_absolute_uri }}">
 
@@ -32,13 +32,13 @@
         <meta name="description" content="{% if language == 'fr' %}{{ blogpost.description_fr|truncatechars:155 }}{% else %}{{ blogpost.description_en|truncatechars:155 }}{% endif %}">
         <meta property="og:description" content="{% if language == 'fr' %}{{ blogpost.description_fr }}{% else %}{{ blogpost.description_en }}{% endif %}">
         <meta name="twitter:description" content="{% if language == 'fr' %}{{ blogpost.description_fr|truncatechars:200 }}{% else %}{{ blogpost.description_en|truncatechars:200 }}{% endif %}">
-        
+
         <meta property="og:image" content="{% absolute_uri request blogpost.cover_picture.ogtag.url %}">
         <meta property="og:image:secure_url" content="{% absolute_uri request blogpost.cover_picture.ogtag.url %}">
         <meta name="twitter:image" content="{% absolute_uri request blogpost.cover_picture.ogtag.url %}">
     {% endblock %}
 
-    
+
     {% block addnavright %}
         {% if request.user.is_confirmed %}
             <li class="hidden-xs"><a href="#commentForm"><span class="glyphicon glyphicon-menu-down"></span></a></li>
@@ -57,7 +57,7 @@
                         </div>
                         <p>
                             <i>{{ blogpost.date|date:'Y-m-d H:i' }}</i>
-                            <span style="margin-right: 0.5em;"></span>- 
+                            <span style="margin-right: 0.5em;"></span>-
                             <span class="glyphicon {{ blogpost.category.glyphicon_name }}" style="margin-left: 0.5em; margin-right: 0.2em;"></span> {% if language == 'fr' %}{{ blogpost.category.name_fr }}{% else %}{{ blogpost.category.name_en }}{% endif %}
                         </p>
                         {% if language == 'fr' %}
@@ -94,6 +94,10 @@
                                 {{ form|bootstrap }}
                                 <button class="btn btn-primary">{% trans "Send" %}</button>
                             </form>
+                        </div>
+                    {% else %}
+                        <div id="commentForm" class="col-xs-12 material-box">
+                            <a href="{% url "login" %}?next={{request.path}}">Log in</a> to post a comment.
                         </div>
                     {% endif %}
                 </div>
