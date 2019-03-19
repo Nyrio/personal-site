@@ -69,6 +69,7 @@ div.griditem {
     margin-right: -15px;
     overflow: hidden;
     padding-bottom: 42.8571429%;
+    padding-bottom: calc(42.8571429% + 12.8571429px);
     position: relative;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
