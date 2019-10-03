@@ -1,10 +1,11 @@
-# Louis Sugy - Élève-ingénieur en informatique
+# Louis Sugy - Ingénieur en informatique
 
 
 ## Expérience professionnelle
 
 | Années | Position | Entreprise, détails |
 | ------ | -------- | ------------------- |
+| 2019/-  | **Ingénieur en technologies d'intelligence artificielle** | *[NVIDIA](https://fr.wikipedia.org/wiki/Nvidia)*, Munich |
 | 2019 | **Stagiaire ingénieur logiciel** | *[Codeplay](https://en.wikipedia.org/wiki/Codeplay)*, Édimbourg %newline% Performance de SYCL-BLAS (algèbre linéaire sur systèmes hétérogènes) |
 | 2018 | **Stagiaire ingénieur logiciel** | *[NVIDIA](https://fr.wikipedia.org/wiki/Nvidia)*, Helsinki %newline% Infrastructure de tests pour les véhicules autonomes |
 | 2017 | **Stagiaire R&D** | *[Dontnod Entertainment](https://fr.wikipedia.org/wiki/Dontnod_Entertainment)*, Paris %newline% Recherche sur des sujets techniques variés pour les développeurs |

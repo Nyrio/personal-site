@@ -1,10 +1,11 @@
-# Louis Sugy - Computer Science Student
+# Louis Sugy - Software Engineer
 
 
 ## Professional Experience
 
 | Years | Position | Company, details |
 | ----- | -------- | ---------------- |
+| 2019/-  | **AI Developer Technology Engineer**  | *[NVIDIA](https://en.wikipedia.org/wiki/Nvidia)*, Munich |
 | 2019 | **Software Engineer Intern** | *[Codeplay](https://en.wikipedia.org/wiki/Codeplay)*, Edinburgh %newline% SYCL-BLAS performance (linear algebra on heterogeneous systems) |
 | 2018 | **Software Engineer Intern** | *[NVIDIA](https://en.wikipedia.org/wiki/Nvidia)*, Helsinki %newline% Autonomous vehicles software sanity |
 | 2017 | **R&D Intern** | *[Dontnod Entertainment](https://en.wikipedia.org/wiki/Dontnod_Entertainment)*, Paris %newline% Research on various technical subjects for the developers |
