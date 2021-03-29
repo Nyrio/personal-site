@@ -3,4 +3,4 @@ django-bootstrap-form==3.4
 django-simple-email-confirmation==0.23
 django-stdimage==3.2.0
 Markdown==2.6.11
-Pygments==2.2.0
+Pygments==2.7.4
